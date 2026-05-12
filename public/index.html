@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sample Reports — Access Property Services</title>
+<title>Strata Reports · Access Property Services</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -489,6 +489,137 @@
     transform: translateX(4px);
   }
 
+  /* --- Methodology --- */
+  .methodology {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    padding: 0 32px;
+  }
+  .meth-header {
+    max-width: 760px;
+    margin: 28px 0 36px;
+  }
+  .meth-header .eyebrow {
+    color: var(--aps-accent);
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .meth-header .eyebrow::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--aps-accent);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .meth-heading {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--aps-ink);
+    margin: 0 0 18px;
+    max-width: 20ch;
+  }
+  .meth-lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--aps-text);
+    margin: 0;
+    max-width: 62ch;
+  }
+  .meth-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .pillar {
+    background: var(--aps-paper);
+    border: 1px solid var(--aps-line);
+    box-shadow: var(--shadow-card);
+    padding: 36px 28px 30px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .pillar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 4px;
+    background: var(--aps-accent);
+  }
+  .pillar-num {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--aps-mute);
+    margin: 0 0 14px;
+  }
+  .pillar-title {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--aps-ink);
+    margin: 0 0 14px;
+  }
+  .pillar p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--aps-text);
+    margin: 0;
+  }
+  .pillar-stat {
+    margin-top: 18px !important;
+    padding-top: 14px;
+    border-top: 1px solid var(--aps-line-light);
+    font-family: var(--ff-mono) !important;
+    font-size: 10.5px !important;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--aps-mute) !important;
+    line-height: 1.5 !important;
+  }
+  .pillar-stat strong {
+    color: var(--aps-accent);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .meth-closing {
+    text-align: center;
+    font-family: var(--ff-display);
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(18px, 2.2vw, 22px);
+    line-height: 1.4;
+    color: var(--aps-mute);
+    margin: 40px auto 0;
+    max-width: 32ch;
+  }
+
+  @media (max-width: 960px) {
+    .methodology { padding: 0 24px; }
+    .meth-pillars { grid-template-columns: 1fr; gap: 16px; }
+    .meth-header { margin: 16px 0 28px; }
+    .meth-closing { margin-top: 32px; }
+  }
+
   /* --- Contact CTA --- */
   .contact-cta {
     max-width: 1200px;
@@ -638,6 +769,329 @@
     .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
   }
 
+
+  /* --- Hero CTA buttons --- */
+  .hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    background: var(--aps-ink);
+    color: var(--aps-paper);
+    text-decoration: none;
+    font-family: var(--ff-display);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 6px 14px rgba(0,0,0,0.08);
+  }
+  .hero-cta .arrow {
+    font-family: var(--ff-mono);
+    font-size: 14px;
+    transition: transform 0.18s ease;
+  }
+  .hero-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08), 0 10px 22px rgba(0,0,0,0.12);
+  }
+  .hero-cta:hover .arrow { transform: translateX(2px); }
+  .hero-cta-alt {
+    background: var(--aps-paper);
+    color: var(--aps-ink);
+    border: 1px solid var(--aps-line);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .hero-cta-alt:hover {
+    border-color: var(--aps-ink);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 8px 18px rgba(0,0,0,0.08);
+  }
+
+  /* --- Meet Dominic enhancements --- */
+  .meet-photo-frame {
+    position: relative;
+  }
+  .meet-photo-tag {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: var(--aps-paper);
+    border-left: 3px solid var(--aps-accent);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .meet-photo-tag-name {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--aps-ink);
+    letter-spacing: -0.01em;
+  }
+  .meet-photo-tag-role {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--aps-mute);
+    text-transform: uppercase;
+  }
+  .meet-credentials {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+  }
+  .meet-credentials li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--aps-text);
+  }
+  .meet-credentials .cred-mark {
+    color: var(--aps-accent);
+    font-size: 9px;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  /* --- Example section --- */
+  .example {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    padding: 0 32px;
+  }
+  .example-inner {
+    max-width: 1100px;
+  }
+  .example .eyebrow {
+    color: var(--aps-accent);
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .example .eyebrow::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--aps-accent);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .example-heading {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--aps-ink);
+    margin: 0 0 18px;
+  }
+  .example-lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--aps-text);
+    margin: 0 0 36px;
+    max-width: 64ch;
+  }
+  .example-card {
+    background: var(--aps-paper);
+    border: 1px solid var(--aps-line);
+    box-shadow: var(--shadow-card);
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    grid-template-rows: auto auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .example-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 5px; height: 100%;
+    background: var(--aps-accent);
+  }
+  .example-card-meta {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 40px 40px 32px 48px;
+    border-bottom: 1px solid var(--aps-line-soft);
+  }
+  .example-card-eyebrow {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--aps-mute);
+    margin: 0 0 12px;
+  }
+  .example-card-title {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--aps-ink);
+    margin: 0 0 14px;
+  }
+  .example-card-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--aps-text);
+    margin: 0 0 18px;
+  }
+  .example-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .example-tag {
+    display: inline-block;
+    padding: 5px 10px;
+    background: var(--aps-bg-warm);
+    color: var(--aps-text);
+    font-family: var(--ff-mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid var(--aps-line);
+  }
+  .example-card-stats {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 40px 40px 32px 32px;
+    background: var(--aps-bg-warm);
+    border-left: 1px solid var(--aps-line-soft);
+    border-bottom: 1px solid var(--aps-line-soft);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 18px;
+    align-content: center;
+  }
+  .estat {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .estat-num {
+    font-family: var(--ff-display);
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 1;
+    color: var(--aps-accent);
+    letter-spacing: -0.025em;
+  }
+  .estat-lab {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--aps-mute);
+    line-height: 1.3;
+  }
+  .example-card-cta {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding: 26px 48px 32px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .example-coverage {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 18px;
+    background: #fdfaf3;
+    border: 1px solid #ead8b7;
+    border-left: 3px solid #b88600;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--aps-text);
+  }
+  .example-coverage .coverage-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    background: #b88600;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+  .example-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 28px;
+    background: var(--aps-accent);
+    color: var(--aps-paper);
+    text-decoration: none;
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.005em;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+    box-shadow: 0 1px 2px rgba(128,0,0,0.15), 0 8px 20px rgba(128,0,0,0.18);
+    align-self: flex-start;
+    max-width: 480px;
+    width: 100%;
+  }
+  .example-btn-arrow {
+    font-family: var(--ff-mono);
+    font-size: 18px;
+    transition: transform 0.18s ease;
+  }
+  .example-btn:hover {
+    transform: translateY(-1px);
+    background: #6b0000;
+    box-shadow: 0 2px 4px rgba(128,0,0,0.2), 0 12px 28px rgba(128,0,0,0.22);
+  }
+  .example-btn:hover .example-btn-arrow { transform: translateX(4px); }
+  .example-card-note {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    color: var(--aps-mute);
+    margin: 0;
+    line-height: 1.4;
+    max-width: 56ch;
+  }
+
+  @media (max-width: 880px) {
+    .meet-credentials { grid-template-columns: 1fr; gap: 8px; }
+    .example { padding: 0 24px; }
+    .example-card { grid-template-columns: 1fr; }
+    .example-card-meta { padding: 28px 28px 24px; border-bottom: 1px solid var(--aps-line-soft); }
+    .example-card-stats { grid-column: 1; grid-row: 2; padding: 24px 28px; border-left: 0; border-top: 1px solid var(--aps-line-soft); }
+    .example-card-cta { grid-column: 1; grid-row: 3; padding: 22px 28px 28px; }
+    .example-btn { max-width: 100%; }
+    .hero-cta-row { flex-direction: column; align-items: stretch; }
+    .hero-cta { justify-content: space-between; }
+  }
+
 </style>
 </head>
 <body>
@@ -647,65 +1101,50 @@
     <a class="brand" href="#">
       <img class="brand-logo" src="./aps-logo.svg" alt="Access Property Services">
       Access Property Services
-      <span class="brand-sub">Sample Reports</span>
+      <span class="brand-sub">Strata Reports</span>
     </a>
-    <span class="topbar-meta">v1 · May 2026</span>
+    <span class="topbar-meta">Sydney, NSW</span>
   </div>
 </div>
 
 <section class="hero">
-  <p class="eyebrow">Access Property Services · Sample Report Library</p>
-  <h1>See exactly <em>what you get.</em></h1>
-  <p class="hero-lede">A library of real, anonymised inspection and assessment reports prepared by Access Property Services — so you can see precisely what a finished document looks like before you commission one. Open any sample to read it end-to-end.</p>
+  <p class="eyebrow">Access Property Services · Pre-Purchase Strata Reports</p>
+  <h1>Builder's eye. <em>AI's reach.</em></h1>
+  <p class="hero-lede">Forensic pre-purchase strata reports for Sydney apartments. A NSW-licensed builder on site, proprietary AI on the documents — every minute, financial, expert report and invoice in the strata library. Same-day verbal briefing. Detailed written report with sources throughout.</p>
+  <div class="hero-cta-row">
+    <a class="hero-cta" href="#example">See an example report <span class="arrow">→</span></a>
+    <a class="hero-cta hero-cta-alt" href="#contact">Get in touch <span class="arrow">→</span></a>
+  </div>
 </section>
 
-<div class="section-rule">
-  <div class="section-rule-inner">
-    <span class="section-rule-label">Available Samples</span>
-    <span class="section-rule-count">03 Live</span>
+<section class="methodology">
+
+  <div class="meth-header">
+    <p class="eyebrow">How we work</p>
+    <h2 class="meth-heading">Insight backed by data.</h2>
+    <p class="meth-lede">Every Access Property Services report combines two things — Dominic Ogburn's hands-on experience inspecting NSW residential buildings, and a proprietary AI document analysis tool that reads every page of the strata library so nothing slips through. The judgement to see what matters, paired with the thoroughness to never miss a detail.</p>
   </div>
-</div>
 
-<section class="reports">
-
-  <!-- Live: Strata Report — SP 391 Lot 21, Ashfield -->
-  <a class="report-card" href="./strata-report-21-ormond-ashfield.html">
-    <div class="report-body">
-      <div class="report-tag-row">
-        <span>Sample 01 · Strata</span>
-        <span class="report-badge">Strata Docs Analysis</span>
-      </div>
-      <h2 class="report-title">Strata Report — Ashfield Unit</h2>
-      <p class="report-desc">A full strata report on a NSW unit in a 1963 24-lot scheme — property overview, financial position (admin &amp; capital works funds, special levies, arrears, insurance), defect history, 10-year CWF plan, fire / cladding / asbestos compliance, strata management, legal &amp; planning, and a 10-item implications register pending physical verification.</p>
-      <span class="report-cta">Open the report <span class="arrow">→</span></span>
+  <div class="meth-pillars">
+    <div class="pillar">
+      <p class="pillar-num">01 · Experience</p>
+      <h3 class="pillar-title">Sees what others don't.</h3>
+      <p>Years of NSW residential construction and inspection work — Dominic knows where to look, what to question, and what's structurally meaningful versus cosmetic. Pattern-matching from hundreds of inspections, applied to your property.</p>
     </div>
-  </a>
-
-  <!-- Live: Strata Report — SP 90191 Arlington Grove, Dulwich Hill -->
-  <a class="report-card" href="./strata-report-arlington-grove.html">
-    <div class="report-body">
-      <div class="report-tag-row">
-        <span>Sample 02 · Strata</span>
-        <span class="report-badge">Strata Docs Analysis Visual</span>
-      </div>
-      <h2 class="report-title">Strata Report — Arlington Grove</h2>
-      <p class="report-desc">A forensic strata report on a 247-lot Dulwich Hill scheme with major construction defects across 4 buildings (Ceerose, 2017). Covers the 19 standardised questions, defects deep-dive (acoustic, fire safety), litigation architecture, builder analysis, levy programme, and a buyer risk matrix with pricing decision framework.</p>
-      <span class="report-cta">Open the report <span class="arrow">→</span></span>
+    <div class="pillar">
+      <p class="pillar-num">02 · AI Analysis</p>
+      <h3 class="pillar-title">Doesn't miss a page.</h3>
+      <p>Our proprietary AI document analysis tool reads the full strata library — minutes, financials, expert reports, correspondence, invoices. It surfaces inconsistencies, finds patterns, and flags what's missing. Most strata reports stop at 3 years; we analyse every document available — whether that's 5 years of records or 10.</p>
+      <p class="pillar-stat"><strong>Largest job to date</strong> &nbsp;·&nbsp; 8,700 documents + 1,400 invoices &nbsp;·&nbsp; 7 years analysed</p>
     </div>
-  </a>
-
-  <!-- Live: Strata Report — SP 98375 Flourmill, Summer Hill -->
-  <a class="report-card" href="./strata-report-flourmill-summer-hill.html">
-    <div class="report-body">
-      <div class="report-tag-row">
-        <span>Sample 03 · Strata</span>
-        <span class="report-badge">Third Party Strata Report Analysis</span>
-      </div>
-      <h2 class="report-title">Strata Report — Flourmill, Summer Hill</h2>
-      <p class="report-desc">An extraction of a 1,284-page strata report on a 136-lot Summer Hill warehouse conversion (Richard Crookes, 2019) — two buildings, 9 expert defect reports, active Supreme Court proceedings, a $44K admin deficit and $550K sewer-works special levy, with the 19 standardised questions answered and full page references throughout.</p>
-      <span class="report-cta">Open the report <span class="arrow">→</span></span>
+    <div class="pillar">
+      <p class="pillar-num">03 · Client-focused</p>
+      <h3 class="pillar-title">Same-day verbal, detailed final.</h3>
+      <p>Straight after the inspection, Dominic calls with a verbal briefing — what he found, what matters most, what to do next. The final written report follows: photos, page references, and remediation advice, shaped to your property.</p>
     </div>
-  </a>
+  </div>
+
+  <p class="meth-closing">Each property is unique. So is each report.</p>
 
 </section>
 
@@ -713,17 +1152,73 @@
   <div class="meet-inner">
     <div class="meet-photo-frame">
       <img class="meet-photo" src="./dominic-ogburn.jpg" alt="Portrait of Dominic Ogburn, Access Property Services">
+      <div class="meet-photo-tag">
+        <span class="meet-photo-tag-name">Dominic Ogburn</span>
+        <span class="meet-photo-tag-role">NSW-licensed builder · Sydney</span>
+      </div>
     </div>
     <div class="meet-text">
       <p class="eyebrow">Meet Dominic</p>
-      <h2 class="meet-heading">Every report comes straight from Dominic Ogburn.</h2>
-      <p class="meet-bio">NSW-licensed builder, based in Sydney. Dominic researches each scheme, attends site visits, and writes every report in this library personally — no junior inspectors, no templated outputs. The voice you read is the one you'll hear over the phone.</p>
-      <a class="meet-link" href="https://dominic-ogburn.pages.dev/" target="_blank" rel="noopener">Check Dominic's bio <span class="arrow">→</span></a>
+      <h2 class="meet-heading">Every report comes straight from him.</h2>
+      <p class="meet-bio">Dominic founded Access Property Services back in 1987 and has been inspecting Sydney buildings ever since — nearly four decades on. A licensed NSW builder by trade, he&apos;s also led ABE Education since 2007. Every report is researched, inspected and written by Dominic personally — no junior inspectors, no templated outputs. The voice you read is the one you&apos;ll hear over the phone.</p>
+
+      <ul class="meet-credentials">
+        <li><span class="cred-mark">●</span><span><strong>NSW Minister&apos;s Award</strong> for service to the building industry</span></li>
+        <li><span class="cred-mark">●</span><span><strong>Standards Australia committee</strong> member</span></li>
+        <li><span class="cred-mark">●</span><span>Cited in <strong>NSW Parliament</strong></span></li>
+        <li><span class="cred-mark">●</span><span>Six features in the <em>Sydney Morning Herald</em></span></li>
+        <li><span class="cred-mark">●</span><span>Founded <strong>Access Property Services</strong> · 1987 (38+ years)</span></li>
+        <li><span class="cred-mark">●</span><span>CEO of <strong>ABE Education</strong> · since 2007</span></li>
+      </ul>
+
+      <a class="meet-link" href="https://dominic-ogburn.pages.dev/" target="_blank" rel="noopener">Read Dominic&apos;s full bio <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
 
-<section class="contact-cta">
+<section class="example" id="example">
+  <div class="example-inner">
+    <p class="eyebrow">An Example Report</p>
+    <h2 class="example-heading">See it for yourself.</h2>
+    <p class="example-lede">Below is a real (anonymised) Access Property Services strata report. Open it to see the executive summary, property overview, financials, defects analysis, market context, and decision-support framework — exactly the structure your report would follow.</p>
+
+    <article class="example-card">
+      <div class="example-card-meta">
+        <p class="example-card-eyebrow">Strata Report &middot; SP 90191 &middot; Lot 163</p>
+        <h3 class="example-card-title">Arlington Grove, Dulwich Hill</h3>
+        <p class="example-card-desc">A forensic pre-purchase strata report on a 247-lot Dulwich Hill scheme with major construction defects across four buildings (Ceerose, 2017), active Supreme Court litigation, a $1.16M special levy, and the Sydney Metro tailwind on the doorstep. Designed to be scannable in two minutes by an experienced strata professional — with depth available on click.</p>
+
+        <div class="example-card-tags">
+          <span class="example-tag">Active litigation</span>
+          <span class="example-tag">$1.16M special levy</span>
+          <span class="example-tag">Defects · 4 buildings</span>
+          <span class="example-tag">Metro tailwind</span>
+        </div>
+      </div>
+
+      <div class="example-card-stats">
+        <div class="estat"><div class="estat-num">247</div><div class="estat-lab">Lots in<br>scheme</div></div>
+        <div class="estat"><div class="estat-num">10,039</div><div class="estat-lab">Documents<br>analysed</div></div>
+        <div class="estat"><div class="estat-num">9</div><div class="estat-lab">Years<br>analysed</div></div>
+        <div class="estat"><div class="estat-num">11</div><div class="estat-lab">Days<br>turnaround</div></div>
+      </div>
+
+      <div class="example-card-cta">
+        <div class="example-coverage">
+          <span class="coverage-icon" aria-hidden="true">✓</span>
+          <span>Every available document analysed — back to SP&nbsp;90191's strata registration on <strong>20 September 2017</strong>. No 3-year cut-off; the full life of the scheme.</span>
+        </div>
+        <a class="example-btn" href="./strata-report-arlington-grove-v2.html">
+          <span class="example-btn-label">Open the example report</span>
+          <span class="example-btn-arrow">→</span>
+        </a>
+        <p class="example-card-note">Identifying details have been anonymised. All findings, sources and figures are accurate to the underlying inspection.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="contact-cta" id="contact">
   <div class="contact-inner">
     <div class="contact-text">
       <p class="eyebrow">Get in Touch</p>
@@ -741,7 +1236,7 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <span>© Access Property Services Pty Ltd · Sydney NSW · <a href="https://accesspropertyservices.com.au/">accesspropertyservices.com.au</a></span>
-    <span>Sample report library · v1</span>
+    <span>Pre-purchase strata reports · Sydney NSW</span>
   </div>
 </footer>
 
