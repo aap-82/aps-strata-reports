@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "aps-strata-samples",
+  "name": "aps-strata-reports",
   "compatibility_date": "2026-05-08",
   "assets": {
     "directory": "./public"
