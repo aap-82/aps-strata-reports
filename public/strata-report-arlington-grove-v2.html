@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Strata Report — Arlington Grove, Dulwich Hill (SP 90191)</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root {
   --black: #000000;
@@ -17,6 +19,8 @@
   --near-white: #f2f2f2;
   --maroon: #800000;
   --maroon-dark: #5c0000;
+  --accent: #1f2937;
+  --accent-dark: #111827;
   --crit-bg: #f5ebeb;
   --good: #2d6a4f;
   --good-bg: #ecf3ee;
@@ -31,8 +35,8 @@
 html, body { margin: 0; padding: 0; }
 
 body {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 14px;
+  font-family: 'Arial', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
   line-height: 1.55;
   color: var(--body-text);
   background: var(--near-white);
@@ -49,7 +53,15 @@ body {
 
 /* HERO */
 .hero {
-  background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+  background: linear-gradient(
+    135deg,
+    #4d5a6b 0%,
+    #2a3645 18%,
+    #1a2535 38%,
+    #0d0d18 58%,
+    #2e0610 78%,
+    #a8001c 100%
+  );
   color: #fff;
   padding: 56px 64px 48px;
   position: relative;
@@ -60,29 +72,29 @@ body {
   position: absolute;
   top: 0; right: 0;
   width: 280px; height: 100%;
-  background: linear-gradient(135deg, transparent 0%, rgba(128,0,0,0.18) 50%, transparent 100%);
+  background: transparent;
   pointer-events: none;
 }
 .hero-eyebrow {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.6);
   margin-bottom: 12px;
 }
 .hero h1 {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 800;
-  font-size: 44px;
+  font-size: 46px;
   line-height: 1.05;
   margin: 0 0 8px;
   letter-spacing: -0.01em;
 }
 .hero h1 .accent { color: #d97a7a; }
 .hero-subtitle {
-  font-family: 'Archivo', sans-serif;
-  font-size: 17px;
+  font-family: 'Lora', serif;
+  font-size: 19px;
   font-weight: 400;
   color: rgba(255,255,255,0.85);
   margin: 0 0 28px;
@@ -91,15 +103,15 @@ body {
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
+  font-family: 'Consolas', monospace;
+  font-size: 14px;
   color: rgba(255,255,255,0.7);
 }
 .hero-meta strong {
   display: block;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
   margin-top: 2px;
   letter-spacing: 0;
@@ -114,8 +126,8 @@ body {
   border-bottom: 1px solid var(--light-grey);
 }
 .toc-title {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--mid-grey);
@@ -131,7 +143,7 @@ body {
   display: flex;
   gap: 12px;
   padding: 6px 0;
-  font-size: 13px;
+  font-size: 15px;
   text-decoration: none;
   color: var(--dark-grey);
   border-bottom: 1px dotted transparent;
@@ -139,8 +151,8 @@ body {
 }
 .toc-item:hover { border-bottom-color: var(--maroon); color: var(--maroon); }
 .toc-num {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
   color: var(--maroon);
   min-width: 20px;
   font-weight: 500;
@@ -152,8 +164,8 @@ section {
   border-bottom: 1px solid var(--near-white);
 }
 .section-eyebrow {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  font-size: 16px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--maroon);
@@ -161,9 +173,9 @@ section {
   font-weight: 500;
 }
 h2.section-title {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 30px;
   line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--black);
@@ -173,7 +185,7 @@ h2.section-title {
   display: inline-block;
 }
 .section-intro {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--mid-grey);
   max-width: 760px;
   margin: 16px 0 36px;
@@ -181,17 +193,17 @@ h2.section-title {
 }
 
 h3 {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 19px;
   color: var(--dark-grey);
   margin: 36px 0 14px;
   letter-spacing: -0.005em;
 }
 h4 {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--dark-grey);
   margin: 24px 0 10px;
 }
@@ -219,17 +231,17 @@ ul li, ol li { margin: 4px 0; }
 /* Stat-card top accent bar removed per user request */
 .stat-card::before { display: none; }
 .stat-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--mid-grey);
   margin-bottom: 8px;
 }
 .stat-value {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 34px;
   line-height: 1;
   color: var(--black);
   letter-spacing: -0.02em;
@@ -238,12 +250,12 @@ ul li, ol li { margin: 4px 0; }
 .stat-value.crit-num { color: var(--maroon); }
 .stat-value.good-num { color: var(--good); }
 .stat-sub {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--mid-grey);
 }
 .stat-card.compact { padding: 16px 18px 14px; }
-.stat-card.compact .stat-value { font-size: 22px; }
-.stat-card.compact .stat-label { font-size: 9px; }
+.stat-card.compact .stat-value { font-size: 24px; }
+.stat-card.compact .stat-label { font-size: 11px; }
 
 /* CALLOUTS */
 .callout {
@@ -264,12 +276,12 @@ ul li, ol li { margin: 4px 0; }
   border-radius: 50%;
   background: var(--maroon);
   color: #fff;
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 2px;
 }
 .callout.note .callout-icon { background: var(--mid-grey); }
@@ -277,8 +289,8 @@ ul li, ol li { margin: 4px 0; }
 .callout.good .callout-icon { background: var(--good); }
 .callout-body { flex: 1; }
 .callout-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--maroon);
@@ -288,7 +300,7 @@ ul li, ol li { margin: 4px 0; }
 .callout.note .callout-label { color: var(--mid-grey); }
 .callout.warn .callout-label { color: var(--warn); }
 .callout.good .callout-label { color: var(--good); }
-.callout-body p { margin: 0; font-size: 14px; }
+.callout-body p { margin: 0; font-size: 16px; }
 .callout-body p + p { margin-top: 10px; }
 
 /* DIAGRAM WRAP */
@@ -341,36 +353,138 @@ ul li, ol li { margin: 4px 0; }
 .timeline-label {
   margin-top: 12px;
   white-space: nowrap;
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--mid-grey);
 }
 .timeline-amount {
   margin-top: 4px;
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--black);
   white-space: nowrap;
 }
 .timeline-marker.upcoming .timeline-amount { color: var(--maroon); }
+
+/* ACOUSTIC FLOW DIAGRAM */
+.acoustic-flow {
+  background: var(--near-white);
+  border-radius: 8px;
+  padding: 28px;
+  margin: 24px 0;
+}
+.acoustic-flow-title {
+  font-family: 'Lora', serif;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 24px;
+  color: #000;
+}
+.acoustic-flow-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: center;
+}
+.acoustic-flow-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.acoustic-card {
+  background: #fff;
+  border: 2px solid var(--maroon);
+  border-radius: 4px;
+  padding: 12px 14px;
+  text-align: center;
+}
+.acoustic-card-affected { background: #f5ebeb; }
+.acoustic-card-building {
+  background: #fdf6ed;
+  border: 2px dashed #b87333;
+}
+.acoustic-card-label {
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
+  color: var(--maroon);
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+.acoustic-card-building .acoustic-card-label { color: #b87333; }
+.acoustic-card-title {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.3;
+}
+.acoustic-flow-centre {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.acoustic-flow-arrow {
+  font-size: 22px;
+  color: var(--maroon);
+  font-weight: 400;
+  line-height: 1;
+}
+.acoustic-expert-card {
+  background: #000;
+  color: #fff;
+  border-radius: 4px;
+  padding: 20px 22px;
+  min-width: 220px;
+  text-align: center;
+}
+.acoustic-expert-label {
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
+  color: #d97a7a;
+  letter-spacing: 0.14em;
+  margin-bottom: 16px;
+}
+.acoustic-expert-row { margin-bottom: 14px; }
+.acoustic-expert-row:last-child { margin-bottom: 0; }
+.acoustic-expert-name {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.acoustic-expert-meta {
+  font-family: 'Arial', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+}
+@media (max-width: 800px) {
+  .acoustic-flow-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .acoustic-flow-centre { flex-direction: column; gap: 8px; }
+  .acoustic-flow-arrow { transform: rotate(90deg); }
+}
 
 /* TABLES */
 table.data {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
-  font-size: 13px;
+  font-size: 15px;
 }
 table.data thead th {
   background: var(--black);
   color: #fff;
   text-align: left;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 10px 14px;
@@ -380,15 +494,15 @@ table.data tbody td {
   padding: 12px 14px;
   border-bottom: 1px solid var(--light-grey);
   vertical-align: middle;
+  font-family: 'Consolas', monospace;
 }
 table.data tbody td.right { text-align: right; font-variant-numeric: tabular-nums; }
-table.data tbody td.num { font-variant-numeric: tabular-nums; font-family: 'DM Mono', monospace; font-size: 12px; }
+table.data tbody td.num { font-variant-numeric: tabular-nums; font-family: 'Consolas', monospace; font-size: 14px; }
 table.data tbody tr:nth-child(even) { background: var(--near-white); }
 table.data tbody tr.highlight {
   background: #fff4ec;
   font-weight: 600;
 }
-table.data tbody tr.highlight td:first-child { border-left: 3px solid var(--maroon); }
 table.data tbody tr.crit { background: var(--crit-bg); }
 table.data tbody tr.crit td { color: var(--maroon-dark); }
 
@@ -406,15 +520,15 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
   background: var(--bg);
 }
 .building-name {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--black);
   margin-bottom: 4px;
 }
 .building-sub {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   color: var(--mid-grey);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -422,8 +536,8 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
 }
 .defect-tags { display: flex; flex-wrap: wrap; gap: 4px; }
 .tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   font-weight: 500;
   padding: 3px 8px;
   border-radius: 3px;
@@ -449,8 +563,8 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
   left: 24px;
   background: var(--maroon);
   color: #fff;
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   letter-spacing: 0.18em;
   font-weight: 700;
   padding: 4px 12px;
@@ -467,15 +581,15 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
   border-bottom: 1px solid var(--light-grey);
 }
 .spotlight-name {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 24px;
   color: var(--black);
   margin: 0;
 }
 .spotlight-meta {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
   color: var(--mid-grey);
   text-align: right;
 }
@@ -484,17 +598,17 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
   grid-template-columns: 1fr 1fr;
   gap: 24px 32px;
 }
-.spotlight-item { font-size: 13px; line-height: 1.55; }
+.spotlight-item { font-size: 15px; line-height: 1.55; }
 .spotlight-item .key {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--mid-grey);
   margin-bottom: 4px;
 }
 .spotlight-item .val {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 600;
   color: var(--dark-grey);
 }
@@ -516,8 +630,8 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
 .risk-card.medium { background: var(--warn-bg); }
 .risk-card.low { background: var(--good-bg); }
 .risk-level {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   letter-spacing: 0.18em;
   font-weight: 700;
   text-transform: uppercase;
@@ -527,13 +641,13 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
 .risk-card.medium .risk-level { color: var(--warn); }
 .risk-card.low .risk-level { color: var(--good); }
 .risk-title {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--black);
   margin-bottom: 8px;
 }
-.risk-desc { font-size: 12px; line-height: 1.5; color: var(--dark-grey); }
+.risk-desc { font-size: 14px; line-height: 1.5; color: var(--dark-grey); }
 
 /* REFERENCE CARD */
 .ref-card {
@@ -549,13 +663,12 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
   margin-top: 18px;
 }
 .ref-item {
-  font-size: 13px;
-  border-left: 2px solid var(--maroon);
-  padding-left: 14px;
+  font-size: 15px;
+  padding-left: 0;
 }
 .ref-role {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--maroon);
@@ -563,21 +676,21 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
   margin-bottom: 4px;
 }
 .ref-name {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 17px;
   color: var(--black);
   margin-bottom: 2px;
 }
-.ref-detail { color: var(--mid-grey); line-height: 1.55; font-size: 12px; }
+.ref-detail { color: var(--mid-grey); line-height: 1.55; font-size: 14px; }
 .ref-detail a { color: var(--maroon); text-decoration: none; }
 .ref-detail a:hover { text-decoration: underline; }
 
 /* PILL */
 .pill {
   display: inline-block;
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   letter-spacing: 0.1em;
   font-weight: 500;
   padding: 3px 10px;
@@ -609,9 +722,9 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
 .tier-card.red { background: var(--crit-bg); }
 .tier-card.deep-red { background: var(--crit-bg); }
 .tier-price {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 800;
-  font-size: 28px;
+  font-size: 30px;
   color: var(--black);
   letter-spacing: -0.02em;
   margin-bottom: 4px;
@@ -620,16 +733,16 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
 .tier-card.amber .tier-price { color: var(--warn); }
 .tier-card.red .tier-price, .tier-card.deep-red .tier-price { color: var(--maroon); }
 .tier-discount {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
   letter-spacing: 0.1em;
   color: var(--mid-grey);
   margin-bottom: 12px;
 }
 .tier-verdict {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 15px;
   margin-bottom: 8px;
 }
 .tier-card.green .tier-verdict { color: var(--good); }
@@ -637,7 +750,7 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
 .tier-card.red .tier-verdict { color: var(--maroon); }
 .tier-card.deep-red .tier-verdict { color: var(--maroon-dark); }
 .tier-desc {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
   color: var(--dark-grey);
 }
@@ -654,7 +767,7 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
   gap: 14px;
   padding: 12px 0;
   border-bottom: 1px solid #e0e0e0;
-  font-size: 13.5px;
+  font-size: 15.5px;
 }
 .checklist-item:last-child { border-bottom: none; }
 .checklist-box {
@@ -666,7 +779,7 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
 }
 .checklist-text { flex: 1; }
 .checklist-text strong { display: block; margin-bottom: 2px; color: var(--black); }
-.checklist-text span { color: var(--mid-grey); font-size: 12px; }
+.checklist-text span { color: var(--mid-grey); font-size: 14px; }
 
 /* CASE CARD GRID — for builder */
 .case-grid {
@@ -683,8 +796,8 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
 }
 .case-card.won { /* outcome colour now shown via header text only */ }
 .case-header {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--maroon);
@@ -692,21 +805,21 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
   margin-bottom: 6px;
 }
 .case-title {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--black);
   margin-bottom: 6px;
   line-height: 1.3;
 }
 .case-meta {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
   color: var(--mid-grey);
   margin-bottom: 8px;
 }
 .case-desc {
-  font-size: 12.5px;
+  font-size: 14.5px;
   line-height: 1.55;
   color: var(--dark-grey);
 }
@@ -736,8 +849,8 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
 .q-card.secondary { }
 .q-card.gap { }
 .q-num {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   letter-spacing: 0.18em;
   font-weight: 700;
   color: var(--maroon);
@@ -745,17 +858,17 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
 .q-card.primary .q-num { color: var(--good); }
 .q-card.secondary .q-num { color: var(--warn); }
 .q-title {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--black);
   margin: 4px 0 10px;
   line-height: 1.3;
 }
-.q-answer { font-size: 13px; color: var(--dark-grey); line-height: 1.5; margin-bottom: 6px; }
+.q-answer { font-size: 15px; color: var(--dark-grey); line-height: 1.5; margin-bottom: 6px; }
 .q-source {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   color: var(--mid-grey);
   letter-spacing: 0.05em;
   margin-top: 8px;
@@ -786,8 +899,8 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
 .afss-event.compliant::before { border-color: var(--good); background: var(--good); }
 .afss-event.noncompliant::before { border-color: var(--maroon); background: var(--maroon); }
 .afss-year {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
   letter-spacing: 0.12em;
   font-weight: 700;
   color: var(--mid-grey);
@@ -795,7 +908,7 @@ table.data tbody tr.crit td { color: var(--maroon-dark); }
 }
 .afss-event.compliant .afss-year { color: var(--good); }
 .afss-event.noncompliant .afss-year { color: var(--maroon); }
-.afss-text { font-size: 13px; color: var(--dark-grey); }
+.afss-text { font-size: 15px; color: var(--dark-grey); }
 
 /* DECISION TREE */
 .decision-flow {
@@ -810,8 +923,8 @@ footer {
   padding: 32px 64px;
   background: var(--black);
   color: #fff;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
   letter-spacing: 0.08em;
   display: flex;
   justify-content: space-between;
@@ -824,7 +937,7 @@ footer .crumb { color: rgba(255,255,255,0.4); }
 
 @media (max-width: 768px) {
   .hero { padding: 40px 24px 32px; }
-  .hero h1 { font-size: 30px; }
+  .hero h1 { font-size: 32px; }
   section { padding: 40px 24px; }
   .toc { padding: 24px; }
   .building-grid { grid-template-columns: repeat(2, 1fr); }
@@ -857,21 +970,21 @@ footer .crumb { color: rgba(255,255,255,0.4); }
   gap: 12px;
   padding: 10px 0;
   border-bottom: 1px dashed rgba(128,0,0,0.18);
-  font-size: 13px;
+  font-size: 15px;
   align-items: baseline;
 }
 .deriv-row:last-of-type { border-bottom: none; }
 .deriv-row .label { color: var(--dark-grey); }
-.deriv-row .op { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--maroon); text-align: right; }
-.deriv-row .val { font-family: 'DM Mono', monospace; font-weight: 600; text-align: right; color: #000; }
+.deriv-row .op { font-family: 'Consolas', monospace; font-size: 14px; color: var(--maroon); text-align: right; }
+.deriv-row .val { font-family: 'Consolas', monospace; font-weight: 600; text-align: right; color: #000; }
 .deriv-row.total {
   border-top: 2px solid var(--maroon);
   border-bottom: none;
   margin-top: 8px;
   padding-top: 14px;
-  font-size: 15px;
+  font-size: 17px;
 }
-.deriv-row.total .val { font-size: 18px; color: var(--maroon); font-weight: 700; }
+.deriv-row.total .val { font-size: 20px; color: var(--maroon); font-weight: 700; }
 
 /* Scenario fan chart wrapper */
 .scenario-chart {
@@ -886,8 +999,8 @@ footer .crumb { color: rgba(255,255,255,0.4); }
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 12px;
-  font-size: 12px;
-  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  font-family: 'Consolas', monospace;
   color: var(--dark-grey);
 }
 .scenario-legend span::before {
@@ -900,7 +1013,7 @@ footer .crumb { color: rgba(255,255,255,0.4); }
 }
 .scenario-legend .opt::before { background: #1a7a4d; }
 .scenario-legend .base::before { background: #4a4a4a; border-style: dashed; }
-.scenario-legend .adv::before { background: #800000; }
+.scenario-legend .adv::before { background: var(--maroon); }
 
 /* Decision matrix (Buy/Wait/Rent) */
 .decision-grid {
@@ -921,23 +1034,23 @@ footer .crumb { color: rgba(255,255,255,0.4); }
 .decision-card.middle { background: linear-gradient(180deg, #fef8ed 0%, #fff 100%); }
 .decision-card.passive { }
 .decision-eyebrow {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   letter-spacing: 1.5px;
   color: var(--mid-grey);
   text-transform: uppercase;
   margin-bottom: 8px;
 }
 .decision-name {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
   color: #000;
   margin-bottom: 12px;
 }
 .decision-stat {
-  font-family: 'DM Mono', monospace;
-  font-size: 13px;
+  font-family: 'Consolas', monospace;
+  font-size: 15px;
   color: var(--dark-grey);
   padding: 4px 0;
   display: flex;
@@ -949,16 +1062,16 @@ footer .crumb { color: rgba(255,255,255,0.4); }
 .decision-verdict {
   margin-top: auto;
   padding-top: 12px;
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--maroon);
 }
 .decision-card.recommended .decision-verdict { color: var(--good); }
 
 /* Comparable sales caption row */
 .comp-context {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--mid-grey);
   margin-top: -8px;
   margin-bottom: 16px;
@@ -970,25 +1083,23 @@ footer .crumb { color: rgba(255,255,255,0.4); }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
-  background: linear-gradient(135deg, #1a4d3a 0%, #2d6e54 100%);
-  color: #fff;
-  border-radius: 10px;
+  background: var(--bg);
+  color: var(--body-text);
+  border: 1px solid var(--light-grey);
+  border-radius: 6px;
   padding: 28px;
   margin: 20px 0;
 }
-.metro-panel .key { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; color: rgba(255,255,255,0.7); text-transform: uppercase; margin-bottom: 6px; }
-.metro-panel .big { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 32px; color: #fff; margin-bottom: 4px; line-height: 1.1; }
-.metro-panel .desc { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.9); }
-.metro-panel h4 { color: #fff; font-family: 'Archivo', sans-serif; font-size: 16px; margin: 0 0 12px 0; font-weight: 700; }
-.metro-panel ul { margin: 8px 0 0 0; padding-left: 18px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.92); }
+.metro-panel .key { font-family: 'Consolas', monospace; font-size: 12px; letter-spacing: 1.5px; color: var(--mid-grey); text-transform: uppercase; margin-bottom: 6px; }
+.metro-panel .big { font-family: 'Lora', serif; font-weight: 700; font-size: 34px; color: var(--black); margin-bottom: 4px; line-height: 1.1; }
+.metro-panel .desc { font-size: 15px; line-height: 1.6; color: var(--body-text); }
+.metro-panel h4 { color: var(--black); font-family: 'Lora', serif; font-size: 18px; margin: 0 0 12px 0; font-weight: 700; }
+.metro-panel ul { margin: 8px 0 0 0; padding-left: 18px; font-size: 15px; line-height: 1.7; color: var(--body-text); }
 
 @media (max-width: 768px) {
-  .deriv-row { grid-template-columns: 1fr 80px 100px; font-size: 12px; }
+  .deriv-row { grid-template-columns: 1fr 80px 100px; font-size: 14px; }
   .decision-grid { grid-template-columns: 1fr; }
   .metro-panel { grid-template-columns: 1fr; }
-}
-@media print {
-  .metro-panel { background: #1a4d3a; }
 }
 
 
@@ -996,9 +1107,9 @@ footer .crumb { color: rgba(255,255,255,0.4); }
 .hero-lot-row { margin: 0 0 22px 0; }
 .hero-lot-chip {
   display: inline-block;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Consolas', monospace;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 2.5px;
   color: #f4c0c0;
   background: rgba(128, 0, 0, 0.45);
@@ -1017,27 +1128,27 @@ footer .crumb { color: rgba(255,255,255,0.4); }
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 .hero-prep-block {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 .hero-prep-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   letter-spacing: 2px;
   color: rgba(212, 168, 168, 0.85);
   margin-bottom: 6px;
   text-transform: uppercase;
 }
 .hero-prep-name {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 19px;
   color: #fff;
   line-height: 1.25;
   margin-bottom: 4px;
 }
 .hero-prep-detail {
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
+  font-family: 'Consolas', monospace;
+  font-size: 14px;
   color: rgba(212, 168, 168, 0.95);
 }
 .hero-prep-detail a {
@@ -1047,11 +1158,11 @@ footer .crumb { color: rgba(255,255,255,0.4); }
 a.hero-cred-btn {
   display: inline-block;
   margin-top: 6px;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
   letter-spacing: 1px;
   color: #fff;
-  background: #800000;
+  background: var(--maroon);
   padding: 6px 12px;
   border: 1px solid rgba(192, 100, 100, 0.5);
   border-radius: 2px;
@@ -1065,111 +1176,26 @@ a.hero-cred-btn:hover { background: #a02020; }
   .hero-prepared { grid-template-columns: 1fr; gap: 18px; }
 }
 @media print {
-  a.hero-cred-btn { background: #800000; }
+  a.hero-cred-btn { background: var(--maroon); }
 }
 
 
-/* === Sticky top navigation === */
-.sticky-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  background: rgba(15, 15, 15, 0.96);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #fff;
-  border-bottom: 1px solid rgba(128, 0, 0, 0.6);
-  transform: translateY(-100%);
-  transition: transform 0.25s ease;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-}
-.sticky-nav.visible { transform: translateY(0); }
-.sticky-nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  gap: 16px;
-}
-.sticky-nav-brand {
-  font-family: 'Archivo', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: #f4c0c0;
-  white-space: nowrap;
-  flex-shrink: 0;
-  border-right: 1px solid rgba(255,255,255,0.15);
-  padding-right: 16px;
-}
-.sticky-nav-brand span { color: rgba(255,255,255,0.55); font-weight: 400; margin-left: 4px; }
-.sticky-nav-links {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 2px;
-  flex: 1;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(128,0,0,0.5) transparent;
-}
-.sticky-nav-links::-webkit-scrollbar { height: 4px; }
-.sticky-nav-links::-webkit-scrollbar-thumb { background: rgba(128,0,0,0.5); }
-.sticky-nav-links a {
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-  padding: 5px 9px;
-  border-radius: 3px;
-  white-space: nowrap;
-  font-size: 11px;
-  letter-spacing: 0.6px;
-  font-weight: 500;
-  transition: background 0.12s, color 0.12s;
-  min-width: 26px;
-  text-align: center;
-}
-.sticky-nav-links a:hover { background: rgba(128,0,0,0.4); color: #fff; }
-.sticky-nav-links a.active { background: #800000; color: #fff; }
-.sticky-nav-top {
-  flex-shrink: 0;
-  color: rgba(255,255,255,0.6);
-  font-size: 10.5px;
-  text-decoration: none;
-  padding: 5px 8px;
-  border-left: 1px solid rgba(255,255,255,0.15);
-  margin-left: 6px;
-}
-.sticky-nav-top:hover { color: #fff; }
-
-/* Anchor offset so sections don't hide under sticky nav when jumped to */
-section[id^="s"] { scroll-margin-top: 60px; }
-
-@media (max-width: 768px) {
-  .sticky-nav-brand { font-size: 11px; padding-right: 10px; }
-  .sticky-nav-brand span { display: none; }
-  .sticky-nav-inner { padding: 8px 12px; gap: 10px; }
-  .sticky-nav-links a { padding: 4px 7px; font-size: 10px; }
-}
-@media print {
-  .sticky-nav { display: none !important; }
-}
+/* Anchor offset so sections don't hide under nav when jumped to */
+section[id^="s"] { scroll-margin-top: 20px; }
 
 /* ============================================ EXECUTIVE SUMMARY ============================================ */
-.toc-item.toc-feat .toc-num { color: var(--maroon); font-weight: 700; }
+.toc-item.toc-feat .toc-num { color: var(--maroon); font-weight: 700; display: none; }
 .toc-item.toc-feat span:last-child { color: var(--black); font-weight: 700; }
 
 .bottom-line {
   background: #fcf8f8;
-  border: 1px solid #ebe0e0;
-  border-left: 4px solid var(--maroon);
+  border: 1px solid #ead8d8;
   padding: 24px 28px;
   margin: 0 0 28px;
 }
 .bl-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1188,7 +1214,7 @@ section[id^="s"] { scroll-margin-top: 60px; }
   display: inline-block;
 }
 .bottom-line p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   margin: 0;
   color: var(--body-text);
@@ -1213,8 +1239,8 @@ section[id^="s"] { scroll-margin-top: 60px; }
   align-items: center;
   gap: 10px;
   margin-bottom: 14px;
-  font-family: 'DM Mono', monospace;
-  font-size: 10.5px;
+  font-family: 'Consolas', monospace;
+  font-size: 12.5px;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1236,15 +1262,15 @@ section[id^="s"] { scroll-margin-top: 60px; }
 .exec-list li {
   padding: 11px 0;
   border-bottom: 1px solid var(--near-white);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.55;
   color: var(--body-text);
 }
 .exec-list li:first-child { padding-top: 0; }
 .exec-list li:last-child { border-bottom: 0; padding-bottom: 0; }
 .exec-list li .q-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.06em;
   color: var(--mid-grey);
@@ -1272,16 +1298,16 @@ section[id^="s"] { scroll-margin-top: 60px; }
   flex-wrap: wrap;
 }
 .conf-stat {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 800;
-  font-size: 26px;
+  font-size: 28px;
   color: var(--black);
   letter-spacing: -0.02em;
   line-height: 1;
 }
 .conf-label {
   color: var(--mid-grey);
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.5;
   flex: 1;
   min-width: 260px;
@@ -1295,15 +1321,15 @@ section[id^="s"] { scroll-margin-top: 60px; }
   margin: 0 0 28px;
 }
 .brief-narrative h3 {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 19px;
   margin: 0 0 12px;
   letter-spacing: -0.01em;
   color: var(--black);
 }
 .brief-narrative p {
-  font-size: 14.5px;
+  font-size: 16.5px;
   line-height: 1.65;
   margin: 0 0 14px;
   color: var(--body-text);
@@ -1327,19 +1353,19 @@ section[id^="s"] { scroll-margin-top: 60px; }
   position: absolute;
   top: 0; left: 0;
   width: 36px; height: 3px;
-  background: var(--maroon);
+  background: #A00000;
 }
 .bstat-num {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 800;
-  font-size: 34px;
+  font-size: 36px;
   line-height: 1;
-  color: var(--maroon);
+  color: var(--accent);
   letter-spacing: -0.025em;
 }
 .bstat-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1351,7 +1377,6 @@ section[id^="s"] { scroll-margin-top: 60px; }
 .brief-quote {
   background: var(--bg);
   border: 1px solid var(--light-grey);
-  border-left: 4px solid var(--maroon);
   margin: 0;
   padding: 26px 30px 22px;
   position: relative;
@@ -1361,15 +1386,15 @@ section[id^="s"] { scroll-margin-top: 60px; }
   position: absolute;
   top: -8px;
   left: 18px;
-  font-family: 'Archivo', sans-serif;
-  font-size: 72px;
+  font-family: 'Lora', serif;
+  font-size: 74px;
   line-height: 1;
   color: var(--maroon);
   opacity: 0.15;
   font-weight: 800;
 }
 .brief-quote p {
-  font-size: 16.5px;
+  font-size: 18.5px;
   line-height: 1.6;
   font-style: italic;
   margin: 0 0 14px;
@@ -1377,8 +1402,8 @@ section[id^="s"] { scroll-margin-top: 60px; }
   position: relative;
 }
 .brief-quote cite {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1396,41 +1421,47 @@ section[id^="s"] { scroll-margin-top: 60px; }
 
 /* ============================================ PARTS (COLLAPSIBLE) ============================================ */
 .part {
-  border-top: 6px solid var(--maroon);
+  border-top: 1.5px solid #600000;
   background: var(--bg);
   margin: 0;
 }
 .part + .part {
-  border-top-width: 6px;
+  border-top-width: 1.5px;
 }
 .part-summary {
   list-style: none;
   cursor: pointer;
   padding: 36px 64px 32px;
   display: grid;
-  grid-template-columns: 110px 1fr 40px;
+  grid-template-columns: 220px 1fr 40px;
   gap: 32px;
   align-items: start;
-  background: linear-gradient(180deg, #faf5f5 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #f6f8fb 0%, #ffffff 100%);
   transition: background-color 0.18s ease;
 }
 .part-summary::-webkit-details-marker { display: none; }
 .part-summary::marker { display: none; }
-.part-summary:hover { background: linear-gradient(180deg, #f5ebeb 0%, #ffffff 100%); }
+.part-summary:hover { background: linear-gradient(180deg, #e8edf4 0%, #ffffff 100%); }
+.part-num-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-self: flex-start;
+}
 .part-num {
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  color: var(--maroon);
+  font-family: 'Consolas', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-weight: 500;
-  padding-top: 8px;
-  border-top: 2px solid var(--maroon);
+  color: var(--maroon);
+  border-top: 1.5px solid var(--accent);
+  padding-top: 10px;
 }
 .part-body { min-width: 0; }
 .part-title {
-  font-family: 'Archivo', sans-serif;
-  font-size: 30px;
+  font-family: 'Lora', serif;
+  font-size: 32px;
   font-weight: 700;
   color: var(--black);
   letter-spacing: -0.02em;
@@ -1438,19 +1469,17 @@ section[id^="s"] { scroll-margin-top: 60px; }
   margin-bottom: 10px;
 }
 .part-blurb {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--mid-grey);
   line-height: 1.5;
   max-width: 64ch;
 }
 .part-sections-list {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
   color: var(--mid-grey);
   letter-spacing: 0.08em;
-  margin-top: 14px;
-  padding-top: 10px;
-  border-top: 1px solid var(--near-white);
+  line-height: 1.7;
 }
 .part-toggle {
   display: flex;
@@ -1458,14 +1487,14 @@ section[id^="s"] { scroll-margin-top: 60px; }
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: var(--maroon);
+  background: #A00000;
   color: #fff;
   transition: transform 0.22s ease, background-color 0.18s ease;
   align-self: start;
   margin-top: 4px;
 }
 .part[open] .part-toggle { transform: rotate(180deg); }
-.part-summary:hover .part-toggle { background: var(--maroon-dark); }
+.part-summary:hover .part-toggle { background: #800000; }
 .part-content > section:first-of-type { border-top: 1px solid var(--light-grey); }
 .part-content > section:last-of-type { border-bottom: 0; }
 
@@ -1490,16 +1519,17 @@ section[id^="s"] { scroll-margin-top: 60px; }
   gap: 4px;
 }
 .toc-part-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.16em;
-  color: var(--maroon);
   text-transform: uppercase;
   margin-bottom: 6px;
   padding-bottom: 6px;
-  border-bottom: 2px solid var(--maroon);
+  border-bottom: 1.5px solid var(--accent);
 }
+.toc-part-label .toc-part-num { color: var(--maroon); }
+.toc-part-label .toc-part-name { color: var(--accent); }
 .toc-part-items { display: flex; flex-direction: column; }
 
 @media (max-width: 800px) {
@@ -1508,40 +1538,224 @@ section[id^="s"] { scroll-margin-top: 60px; }
     padding: 24px 22px;
     gap: 12px;
   }
-  .part-num {
+  .part-num-col {
     grid-column: 1;
     grid-row: 1;
+  }
+  .part-num {
     border-top: 0;
     padding-top: 0;
-    margin-bottom: -4px;
   }
   .part-body { grid-column: 1; grid-row: 2; }
   .part-toggle { grid-column: 2; grid-row: 1 / 3; align-self: center; }
-  .part-title { font-size: 22px; }
+  .part-title { font-size: 24px; }
   .toc-grouped { grid-template-columns: 1fr; gap: 20px; }
 }
 
+/* === Dynamic Island TOC === */
+.island-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.22);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.island-backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.island-toc {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+.island-pill {
+  position: relative;
+  width: 300px;
+  height: 54px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 27px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.18), 0 8px 16px rgba(0,0,0,0.10);
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    width 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.island-pill.expanded {
+  width: 360px;
+  height: 420px;
+  border-radius: 24px;
+  cursor: default;
+}
+.island-closed, .island-expanded {
+  position: absolute;
+  inset: 0;
+  transition:
+    opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.island-closed {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 22px;
+  opacity: 1;
+}
+.island-pill.expanded .island-closed {
+  opacity: 0;
+  transform: scale(0.95);
+  filter: blur(4px);
+  pointer-events: none;
+}
+.island-expanded {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+}
+.island-pill.expanded .island-expanded {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  transition-delay: 0.08s;
+}
+.island-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--maroon);
+  flex-shrink: 0;
+}
+.island-current {
+  flex: 1;
+  font-family: 'Arial', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+.island-progress {
+  flex-shrink: 0;
+}
+.island-progress-track { stroke: rgba(0,0,0,0.12); }
+.island-progress-fill {
+  stroke: var(--maroon);
+  transition: stroke-dashoffset 0.18s ease-out;
+}
+.island-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px 14px;
+  flex-shrink: 0;
+}
+.island-label {
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  color: rgba(0,0,0,0.55);
+  text-transform: uppercase;
+}
+.island-close {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.island-close:hover {
+  color: #000;
+  background: rgba(0,0,0,0.05);
+}
+.island-list {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0 12px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.island-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: rgba(0,0,0,0.48);
+  cursor: pointer;
+  transition: all 0.22s ease-out;
+}
+.island-item-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: transform 0.22s ease-out;
+}
+.island-item:hover {
+  background: rgba(0,0,0,0.04);
+  color: rgba(0,0,0,0.85);
+}
+.island-item:hover .island-item-text {
+  transform: translateX(4px);
+}
+.island-item.active {
+  background: rgba(128,0,0,0.08);
+  color: var(--maroon);
+  font-weight: 500;
+}
+.island-item-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--maroon);
+  margin-left: 10px;
+  flex-shrink: 0;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.island-item.active .island-item-indicator {
+  opacity: 1;
+  transform: scale(1);
+}
+@media (max-width: 480px) {
+  .island-pill { width: 260px; }
+  .island-pill.expanded { width: 320px; height: 400px; }
+}
+@media print {
+  .island-toc, .island-backdrop { display: none !important; }
+}
 </style>
 </head>
 <body>
 <div class="page">
-<nav class="sticky-nav" id="stickyNav">
-  <div class="sticky-nav-inner">
-    <div class="sticky-nav-brand">SP 90191 <span>· Lot 163</span></div>
-    <div class="sticky-nav-links">
-      <a href="#exec" title="Executive Summary">★ Exec</a>
-      <a href="#brief" title="About this report">★ Brief</a>
-      <a href="#part-I" title="Property Overview">I</a>
-      <a href="#part-II" title="Finances">II</a>
-      <a href="#part-III" title="Building Condition">III</a>
-      <a href="#part-IV" title="Legal &amp; Governance">IV</a>
-      <a href="#part-V" title="Context">V</a>
-      <a href="#part-VI" title="Decision Support">VI</a>
-      <a href="#part-VII" title="References">VII</a>
-    </div>
-    <a href="#top" class="sticky-nav-top" title="Back to top">↑ Top</a>
-  </div>
-</nav>
 
 
 <!-- ============================================ HERO ============================================ -->
@@ -1580,12 +1794,12 @@ section[id^="s"] { scroll-margin-top: 60px; }
   <div class="toc-grouped">
 
     <div class="toc-featured">
-      <a class="toc-item toc-feat" href="#exec"><span class="toc-num">★</span><span>Executive Summary</span></a>
-      <a class="toc-item toc-feat" href="#brief"><span class="toc-num">★</span><span>About this report</span></a>
+      <a class="toc-item toc-feat" href="#exec"><span class="toc-num"></span><span>Executive Summary</span></a>
+      <a class="toc-item toc-feat" href="#brief"><span class="toc-num"></span><span>About this report</span></a>
     </div>
 
     <div class="toc-part">
-      <div class="toc-part-label">Part I &middot; Property Overview</div>
+      <div class="toc-part-label"><span class="toc-part-num">Part 01</span> &middot; <span class="toc-part-name">Property Overview</span></div>
       <div class="toc-part-items">
         <a class="toc-item" href="#s01"><span class="toc-num">01</span><span>At a glance</span></a>
         <a class="toc-item" href="#s02"><span class="toc-num">02</span><span>Property overview</span></a>
@@ -1593,7 +1807,7 @@ section[id^="s"] { scroll-margin-top: 60px; }
     </div>
 
     <div class="toc-part">
-      <div class="toc-part-label">Part II &middot; Finances</div>
+      <div class="toc-part-label"><span class="toc-part-num">Part 02</span> &middot; <span class="toc-part-name">Finances</span></div>
       <div class="toc-part-items">
         <a class="toc-item" href="#s03"><span class="toc-num">03</span><span>Financial position</span></a>
         <a class="toc-item" href="#s04"><span class="toc-num">04</span><span>Levy programme</span></a>
@@ -1601,7 +1815,7 @@ section[id^="s"] { scroll-margin-top: 60px; }
     </div>
 
     <div class="toc-part">
-      <div class="toc-part-label">Part III &middot; Building Condition</div>
+      <div class="toc-part-label"><span class="toc-part-num">Part 03</span> &middot; <span class="toc-part-name">Building Condition</span></div>
       <div class="toc-part-items">
         <a class="toc-item" href="#s05"><span class="toc-num">05</span><span>Defects across 4 buildings</span></a>
         <a class="toc-item" href="#s06"><span class="toc-num">06</span><span>Acoustic deep-dive</span></a>
@@ -1610,7 +1824,7 @@ section[id^="s"] { scroll-margin-top: 60px; }
     </div>
 
     <div class="toc-part">
-      <div class="toc-part-label">Part IV &middot; Legal &amp; Governance</div>
+      <div class="toc-part-label"><span class="toc-part-num">Part 04</span> &middot; <span class="toc-part-name">Legal &amp; Governance</span></div>
       <div class="toc-part-items">
         <a class="toc-item" href="#s08"><span class="toc-num">08</span><span>Litigation architecture</span></a>
         <a class="toc-item" href="#s09"><span class="toc-num">09</span><span>The builder Ceerose</span></a>
@@ -1619,7 +1833,7 @@ section[id^="s"] { scroll-margin-top: 60px; }
     </div>
 
     <div class="toc-part">
-      <div class="toc-part-label">Part V &middot; Context</div>
+      <div class="toc-part-label"><span class="toc-part-num">Part 05</span> &middot; <span class="toc-part-name">Context</span></div>
       <div class="toc-part-items">
         <a class="toc-item" href="#s11"><span class="toc-num">11</span><span>Insurance &amp; compliance</span></a>
         <a class="toc-item" href="#s12"><span class="toc-num">12</span><span>Property market &amp; suburb context</span></a>
@@ -1627,7 +1841,7 @@ section[id^="s"] { scroll-margin-top: 60px; }
     </div>
 
     <div class="toc-part">
-      <div class="toc-part-label">Part VI &middot; Decision Support</div>
+      <div class="toc-part-label"><span class="toc-part-num">Part 06</span> &middot; <span class="toc-part-name">Decision Support</span></div>
       <div class="toc-part-items">
         <a class="toc-item" href="#s13"><span class="toc-num">13</span><span>Lot 163 spotlight</span></a>
         <a class="toc-item" href="#s15"><span class="toc-num">14</span><span>Buyer risk matrix</span></a>
@@ -1635,7 +1849,7 @@ section[id^="s"] { scroll-margin-top: 60px; }
     </div>
 
     <div class="toc-part">
-      <div class="toc-part-label">Part VII &middot; References</div>
+      <div class="toc-part-label"><span class="toc-part-num">Part 07</span> &middot; <span class="toc-part-name">References</span></div>
       <div class="toc-part-items">
         <a class="toc-item" href="#s18"><span class="toc-num">15</span><span>References &amp; sources</span></a>
       </div>
@@ -1646,7 +1860,7 @@ section[id^="s"] { scroll-margin-top: 60px; }
 
 <!-- ============================================ EXEC — EXECUTIVE SUMMARY ============================================ -->
 <section id="exec">
-  <div class="section-eyebrow">★ Executive Summary</div>
+  <div class="section-eyebrow">Executive Summary</div>
   <h2 class="section-title">Summary</h2>
 
   <div class="bottom-line">
@@ -1694,7 +1908,7 @@ section[id^="s"] { scroll-margin-top: 60px; }
 
 <!-- ============================================ BRIEF — ABOUT THIS REPORT ============================================ -->
 <section id="brief">
-  <div class="section-eyebrow">★ About This Report</div>
+  <div class="section-eyebrow">About This Report</div>
   <h2 class="section-title">Pre-purchase forensic analysis.</h2>
   <p class="section-intro">A snapshot of the scope, scale and outcome of this specific job — what we processed, in how long, and what the client said about the result.</p>
 
@@ -1707,15 +1921,15 @@ section[id^="s"] { scroll-margin-top: 60px; }
 
     <div class="brief-stats">
       <div class="bstat">
-        <div class="bstat-num">2,400</div>
+        <div class="bstat-num">10,039</div>
         <div class="bstat-label">Documents<br>processed</div>
       </div>
       <div class="bstat">
-        <div class="bstat-num">380</div>
+        <div class="bstat-num">1,407</div>
         <div class="bstat-label">Invoices<br>analysed</div>
       </div>
       <div class="bstat">
-        <div class="bstat-num">5</div>
+        <div class="bstat-num">9</div>
         <div class="bstat-label">Years of<br>records</div>
       </div>
       <div class="bstat">
@@ -1725,19 +1939,24 @@ section[id^="s"] { scroll-margin-top: 60px; }
     </div>
   </div>
 
-  <blockquote class="brief-quote">
-    <p>Dominic walked us through the verbal briefing the same evening as the inspection — we knew within 90 minutes that the building was salvageable but priced wrong. The final report gave us exactly the page references we needed to renegotiate. We saved $80,000 on the purchase and walked in with eyes open about the levy contributions ahead.</p>
-    <cite>— John Smith, client</cite>
-  </blockquote>
+  <div class="callout warn">
+    <div class="callout-icon">i</div>
+    <div class="callout-body">
+      <div class="callout-label">Outcome</div>
+      <p>After reading this report, the client decided not to proceed with the purchase and elected to pay the contract cancellation fee. They concluded that the long-term cost of going ahead would substantially exceed the fee to cancel.</p>
+    </div>
+  </div>
 </section>
 
 <details class="part" id="part-I" open>
   <summary class="part-summary">
-    <div class="part-num">PART I</div>
+    <div class="part-num-col">
+      <div class="part-num">PART 01</div>
+      <div class="part-sections-list">01 At a glance<br>02 Property overview</div>
+    </div>
     <div class="part-body">
       <div class="part-title">Property Overview</div>
       <div class="part-blurb">The property file as scannable cards, with a key-numbers dashboard up top.</div>
-      <div class="part-sections-list">01 At a glance · 02 Property overview</div>
     </div>
     <div class="part-toggle"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
   </summary>
@@ -1802,11 +2021,13 @@ section[id^="s"] { scroll-margin-top: 60px; }
 
 <details class="part" id="part-II">
   <summary class="part-summary">
-    <div class="part-num">PART II</div>
+    <div class="part-num-col">
+      <div class="part-num">PART 02</div>
+      <div class="part-sections-list">03 Financial position<br>04 Levy programme</div>
+    </div>
     <div class="part-body">
       <div class="part-title">Finances</div>
       <div class="part-blurb">Net Owner Funds, the levy programme, and the Motion 7 special levy schedule.</div>
-      <div class="part-sections-list">03 Financial position · 04 Levy programme</div>
     </div>
     <div class="part-toggle"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
   </summary>
@@ -1828,11 +2049,11 @@ section[id^="s"] { scroll-margin-top: 60px; }
       <line x1="60" y1="100" x2="660" y2="100" stroke="#f2f2f2" stroke-width="1"/>
       <line x1="60" y1="150" x2="660" y2="150" stroke="#f2f2f2" stroke-width="1"/>
       <line x1="60" y1="200" x2="660" y2="200" stroke="#f2f2f2" stroke-width="1"/>
-      <text x="55" y="54" text-anchor="end" font-family="DM Mono, monospace" font-size="9" fill="#666">$800k</text>
-      <text x="55" y="104" text-anchor="end" font-family="DM Mono, monospace" font-size="9" fill="#666">$600k</text>
-      <text x="55" y="154" text-anchor="end" font-family="DM Mono, monospace" font-size="9" fill="#666">$400k</text>
-      <text x="55" y="204" text-anchor="end" font-family="DM Mono, monospace" font-size="9" fill="#666">$200k</text>
-      <text x="55" y="224" text-anchor="end" font-family="DM Mono, monospace" font-size="9" fill="#666">$0</text>
+      <text x="55" y="54" text-anchor="end" font-family="Consolas, monospace" font-size="11" fill="#666">$800k</text>
+      <text x="55" y="104" text-anchor="end" font-family="Consolas, monospace" font-size="11" fill="#666">$600k</text>
+      <text x="55" y="154" text-anchor="end" font-family="Consolas, monospace" font-size="11" fill="#666">$400k</text>
+      <text x="55" y="204" text-anchor="end" font-family="Consolas, monospace" font-size="11" fill="#666">$200k</text>
+      <text x="55" y="224" text-anchor="end" font-family="Consolas, monospace" font-size="11" fill="#666">$0</text>
 
       <!-- data line: FY23 $694k, FY24 $618k, FY25 $590k, Apr 2026 $260k, projected end FY26 $1.18M (with levy) -->
       <!-- mapping: 0 = bottom (220), 800 = top (40); scale = 180/800 = 0.225 -->
@@ -1842,32 +2063,32 @@ section[id^="s"] { scroll-margin-top: 60px; }
       <!-- $260k → 220 - 58.5 = 161.5 -->
       <!-- $1180k → 220 - 265.5 = -45.5, clip to top 40 -->
 
-      <polyline points="120,64 240,81 360,87 480,162 600,40" fill="none" stroke="#800000" stroke-width="3"/>
+      <polyline points="120,64 240,81 360,87 480,162 600,40" fill="none" stroke="var(--maroon)" stroke-width="3"/>
       <!-- Projected segment dashed -->
-      <line x1="480" y1="162" x2="600" y2="40" stroke="#800000" stroke-width="3" stroke-dasharray="6,4" opacity="0.4"/>
+      <line x1="480" y1="162" x2="600" y2="40" stroke="var(--maroon)" stroke-width="3" stroke-dasharray="6,4" opacity="0.4"/>
 
       <!-- data points -->
-      <circle cx="120" cy="64" r="5" fill="#800000"/>
-      <circle cx="240" cy="81" r="5" fill="#800000"/>
-      <circle cx="360" cy="87" r="5" fill="#800000"/>
-      <circle cx="480" cy="162" r="5" fill="#800000"/>
-      <circle cx="600" cy="40" r="5" fill="none" stroke="#800000" stroke-width="3"/>
+      <circle cx="120" cy="64" r="5" fill="var(--maroon)"/>
+      <circle cx="240" cy="81" r="5" fill="var(--maroon)"/>
+      <circle cx="360" cy="87" r="5" fill="var(--maroon)"/>
+      <circle cx="480" cy="162" r="5" fill="var(--maroon)"/>
+      <circle cx="600" cy="40" r="5" fill="none" stroke="var(--maroon)" stroke-width="3"/>
 
       <!-- labels above points -->
-      <text x="120" y="50" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="700" fill="#000">$694k</text>
-      <text x="240" y="68" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="700" fill="#000">$618k</text>
-      <text x="360" y="74" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="700" fill="#000">$590k</text>
-      <text x="480" y="180" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12" font-weight="700" fill="#800000">$260k</text>
-      <text x="600" y="32" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="700" fill="#666">$1.18M*</text>
+      <text x="120" y="50" text-anchor="middle" font-family="Lora, serif" font-size="13" font-weight="700" fill="#000">$694k</text>
+      <text x="240" y="68" text-anchor="middle" font-family="Lora, serif" font-size="13" font-weight="700" fill="#000">$618k</text>
+      <text x="360" y="74" text-anchor="middle" font-family="Lora, serif" font-size="13" font-weight="700" fill="#000">$590k</text>
+      <text x="480" y="180" text-anchor="middle" font-family="Lora, serif" font-size="14" font-weight="700" fill="var(--maroon)">$260k</text>
+      <text x="600" y="32" text-anchor="middle" font-family="Lora, serif" font-size="13" font-weight="700" fill="#666">$1.18M*</text>
 
       <!-- x labels -->
-      <text x="120" y="240" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#666">31/07/2023</text>
-      <text x="240" y="240" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#666">31/07/2024</text>
-      <text x="360" y="240" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#666">31/07/2025</text>
-      <text x="480" y="240" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#666">24/04/2026</text>
-      <text x="600" y="240" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#666">31/07/2026 (proj)</text>
+      <text x="120" y="240" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#666">31/07/2023</text>
+      <text x="240" y="240" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#666">31/07/2024</text>
+      <text x="360" y="240" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#666">31/07/2025</text>
+      <text x="480" y="240" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#666">24/04/2026</text>
+      <text x="600" y="240" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#666">31/07/2026 (proj)</text>
 
-      <text x="350" y="270" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#666">* Projected if all Motion 7 instalments raised on schedule</text>
+      <text x="350" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#666">* Projected if all Motion 7 instalments raised on schedule</text>
     </svg>
   </div>
 
@@ -1940,11 +2161,13 @@ section[id^="s"] { scroll-margin-top: 60px; }
 
 <details class="part" id="part-III">
   <summary class="part-summary">
-    <div class="part-num">PART III</div>
+    <div class="part-num-col">
+      <div class="part-num">PART 03</div>
+      <div class="part-sections-list">05 Defects<br>06 Acoustic<br>07 Fire safety</div>
+    </div>
     <div class="part-body">
       <div class="part-title">Building Condition</div>
       <div class="part-blurb">Three deep-dives into the physical state of all four buildings.</div>
-      <div class="part-sections-list">05 Defects · 06 Acoustic · 07 Fire safety</div>
     </div>
     <div class="part-toggle"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
   </summary>
@@ -2033,69 +2256,67 @@ section[id^="s"] { scroll-margin-top: 60px; }
   <p class="section-intro">Two acoustic experts engaged. The cafe ventilation system, mechanical plant, sprinklers and basement jet fans have all been investigated as noise sources. Affected units span lower-level (near cafe) and upper-level (near plant) positions across multiple buildings.</p>
 
   <div class="diagram-wrap">
-    <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Acoustic noise sources affecting residential units">
-      <!-- title -->
-      <text x="400" y="24" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Acoustic noise sources → affected units</text>
+    <div class="acoustic-flow">
+      <div class="acoustic-flow-title">Acoustic noise sources &rarr; affected units</div>
+      <div class="acoustic-flow-grid">
+        <!-- Sources column -->
+        <div class="acoustic-flow-col">
+          <div class="acoustic-card">
+            <div class="acoustic-card-label">SOURCE</div>
+            <div class="acoustic-card-title">Cafe ventilation</div>
+          </div>
+          <div class="acoustic-card">
+            <div class="acoustic-card-label">SOURCE</div>
+            <div class="acoustic-card-title">Sprinklers / building services</div>
+          </div>
+          <div class="acoustic-card">
+            <div class="acoustic-card-label">SOURCE</div>
+            <div class="acoustic-card-title">Basement jet fans</div>
+          </div>
+          <div class="acoustic-card">
+            <div class="acoustic-card-label">SOURCE</div>
+            <div class="acoustic-card-title">Mechanical plant</div>
+          </div>
+        </div>
 
-      <!-- Sources (left column) -->
-      <g>
-        <rect x="40" y="60" width="180" height="46" rx="4" fill="#fff" stroke="#800000" stroke-width="2"/>
-        <text x="130" y="80" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#800000">SOURCE</text>
-        <text x="130" y="98" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Cafe ventilation</text>
+        <!-- Centre: Expert witnesses -->
+        <div class="acoustic-flow-centre">
+          <div class="acoustic-flow-arrow">&rarr;</div>
+          <div class="acoustic-expert-card">
+            <div class="acoustic-expert-label">EXPERT WITNESSES</div>
+            <div class="acoustic-expert-row">
+              <div class="acoustic-expert-name">Acoustic Dynamics</div>
+              <div class="acoustic-expert-meta">Project 5989 &middot; Snr Eng JC</div>
+            </div>
+            <div class="acoustic-expert-row">
+              <div class="acoustic-expert-name">Koikas Acoustics</div>
+              <div class="acoustic-expert-meta">Report 13/01/2025</div>
+            </div>
+          </div>
+          <div class="acoustic-flow-arrow">&rarr;</div>
+        </div>
 
-        <rect x="40" y="125" width="180" height="46" rx="4" fill="#fff" stroke="#800000" stroke-width="2"/>
-        <text x="130" y="145" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#800000">SOURCE</text>
-        <text x="130" y="163" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Sprinklers / building services</text>
-
-        <rect x="40" y="190" width="180" height="46" rx="4" fill="#fff" stroke="#800000" stroke-width="2"/>
-        <text x="130" y="210" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#800000">SOURCE</text>
-        <text x="130" y="228" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Basement jet fans</text>
-
-        <rect x="40" y="255" width="180" height="46" rx="4" fill="#fff" stroke="#800000" stroke-width="2"/>
-        <text x="130" y="275" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#800000">SOURCE</text>
-        <text x="130" y="293" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Mechanical plant</text>
-      </g>
-
-      <!-- Experts (centre) -->
-      <g>
-        <rect x="290" y="100" width="220" height="120" rx="4" fill="#000"/>
-        <text x="400" y="124" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" letter-spacing="2" fill="#d97a7a">EXPERT WITNESSES</text>
-        <text x="400" y="148" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#fff">Acoustic Dynamics</text>
-        <text x="400" y="164" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">Project 5989 · Snr Eng JC</text>
-        <text x="400" y="184" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#fff">Koikas Acoustics</text>
-        <text x="400" y="200" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">Report 13/01/2025</text>
-      </g>
-
-      <!-- Affected units (right) -->
-      <g>
-        <rect x="580" y="60" width="180" height="46" rx="4" fill="#f5ebeb" stroke="#800000"/>
-        <text x="670" y="80" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#800000">AFFECTED</text>
-        <text x="670" y="98" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Apt 1101 Kona A</text>
-
-        <rect x="580" y="125" width="180" height="46" rx="4" fill="#f5ebeb" stroke="#800000"/>
-        <text x="670" y="145" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#800000">AFFECTED</text>
-        <text x="670" y="163" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Unit 5001</text>
-
-        <rect x="580" y="190" width="180" height="46" rx="4" fill="#f5ebeb" stroke="#800000"/>
-        <text x="670" y="210" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#800000">AFFECTED</text>
-        <text x="670" y="228" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Valencia B Level 7</text>
-
-        <rect x="580" y="255" width="180" height="46" rx="4" fill="#fdf6ed" stroke="#b87333" stroke-dasharray="4 3"/>
-        <text x="670" y="275" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#b87333">BUILDING-WIDE</text>
-        <text x="670" y="293" text-anchor="middle" font-family="Archivo, sans-serif" font-size="13" font-weight="700" fill="#000">Many units (CR SYD230148)</text>
-      </g>
-
-      <!-- arrows -->
-      <line x1="220" y1="83" x2="288" y2="140" stroke="#666" stroke-width="1.5"/>
-      <line x1="220" y1="148" x2="288" y2="160" stroke="#666" stroke-width="1.5"/>
-      <line x1="220" y1="213" x2="288" y2="180" stroke="#666" stroke-width="1.5"/>
-      <line x1="220" y1="278" x2="288" y2="200" stroke="#666" stroke-width="1.5"/>
-
-      <line x1="510" y1="140" x2="578" y2="83" stroke="#800000" stroke-width="1.5"/>
-      <line x1="510" y1="160" x2="578" y2="148" stroke="#800000" stroke-width="1.5"/>
-      <line x1="510" y1="180" x2="578" y2="213" stroke="#800000" stroke-width="1.5"/>
-      <line x1="510" y1="200" x2="578" y2="278" stroke="#800000" stroke-width="1.5"/>
-    </svg>
+        <!-- Affected column -->
+        <div class="acoustic-flow-col">
+          <div class="acoustic-card acoustic-card-affected">
+            <div class="acoustic-card-label">AFFECTED</div>
+            <div class="acoustic-card-title">Apt 1101 Kona A</div>
+          </div>
+          <div class="acoustic-card acoustic-card-affected">
+            <div class="acoustic-card-label">AFFECTED</div>
+            <div class="acoustic-card-title">Unit 5001</div>
+          </div>
+          <div class="acoustic-card acoustic-card-affected">
+            <div class="acoustic-card-label">AFFECTED</div>
+            <div class="acoustic-card-title">Valencia B Level 7</div>
+          </div>
+          <div class="acoustic-card acoustic-card-building">
+            <div class="acoustic-card-label">BUILDING-WIDE</div>
+            <div class="acoustic-card-title">Many units (CR SYD230148)</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <h3>Acoustic experts engaged</h3>
@@ -2103,14 +2324,14 @@ section[id^="s"] { scroll-margin-top: 60px; }
     <thead><tr><th>Expert</th><th>Engagement</th><th class="right">Cost</th></tr></thead>
     <tbody>
       <tr>
-        <td><strong>Acoustic Dynamics Pty Ltd</strong><br><span style="font-size:11px;color:var(--mid-grey)">Suite 2/174 Willoughby Rd, St Leonards</span></td>
+        <td><strong>Acoustic Dynamics Pty Ltd</strong><br><span style="font-size:13px;color:var(--mid-grey)">Suite 2/174 Willoughby Rd, St Leonards</span></td>
         <td>Engaged via Chambers Russell Lawyers (Nicole Ellul-Thorn) — "Item 3 Preliminary Investigations &amp; Advice (20% of units) for Litigation". Senior Engineer "JC". Reattendance for testing &amp; rooftop inspections 29/03/2024 and 03/07/2024.</td>
-        <td class="right"><strong>$8,650</strong> ex GST<br><span style="font-size:11px;color:var(--mid-grey)">Tax Invoice 0019359 · 13/12/2024</span></td>
+        <td class="right"><strong>$8,650</strong> ex GST<br><span style="font-size:13px;color:var(--mid-grey)">Tax Invoice 0019359 · 13/12/2024</span></td>
       </tr>
       <tr>
         <td><strong>Koikas Acoustics Pty Ltd</strong></td>
         <td>Acoustic report referenced in insurance Building Defects exclusion clause. Supplementary to Acoustic Dynamics work.</td>
-        <td class="right"><span style="font-size:11px;color:var(--mid-grey)">Report dated</span><br><strong>13/01/2025</strong></td>
+        <td class="right"><span style="font-size:13px;color:var(--mid-grey)">Report dated</span><br><strong>13/01/2025</strong></td>
       </tr>
     </tbody>
   </table>
@@ -2134,14 +2355,14 @@ section[id^="s"] { scroll-margin-top: 60px; }
   <div style="display:flex;gap:24px;align-items:center;background:var(--near-white);padding:24px;border-radius:8px;margin:16px 0;flex-wrap:wrap;">
     <svg viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="39 of 59 fire dampers non-compliant">
       <circle cx="60" cy="60" r="50" fill="none" stroke="#cccccc" stroke-width="14"/>
-      <circle cx="60" cy="60" r="50" fill="none" stroke="#800000" stroke-width="14"
+      <circle cx="60" cy="60" r="50" fill="none" stroke="var(--maroon)" stroke-width="14"
         stroke-dasharray="207.3 314" stroke-dashoffset="0" transform="rotate(-90 60 60)"/>
-      <text x="60" y="58" text-anchor="middle" font-family="Archivo, sans-serif" font-size="22" font-weight="700" fill="#800000">66%</text>
-      <text x="60" y="76" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#666">FAILED</text>
+      <text x="60" y="58" text-anchor="middle" font-family="Lora, serif" font-size="24" font-weight="700" fill="var(--maroon)">66%</text>
+      <text x="60" y="76" text-anchor="middle" font-family="Consolas, monospace" font-size="11" fill="#666">FAILED</text>
     </svg>
     <div style="flex:1;min-width:240px;">
-      <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;color:var(--black);margin-bottom:6px;">39 of 59 fire dampers non-compliant</div>
-      <p style="margin:0;font-size:13px;color:var(--dark-grey);">Per Waratah Air Audit dated 23 November 2022 — finding has been on the record for over <strong>3 years</strong> without rectification. Defects include missing breakaway joins, missing angles, gaps requiring fire mastic, and dampers not correctly located in slab.</p>
+      <div style="font-family:'Lora',sans-serif;font-weight:700;font-size:20px;color:var(--black);margin-bottom:6px;">39 of 59 fire dampers non-compliant</div>
+      <p style="margin:0;font-size:15px;color:var(--dark-grey);">Per Waratah Air Audit dated 23 November 2022 — finding has been on the record for over <strong>3 years</strong> without rectification. Defects include missing breakaway joins, missing angles, gaps requiring fire mastic, and dampers not correctly located in slab.</p>
     </div>
   </div>
 
@@ -2217,11 +2438,13 @@ section[id^="s"] { scroll-margin-top: 60px; }
 
 <details class="part" id="part-IV">
   <summary class="part-summary">
-    <div class="part-num">PART IV</div>
+    <div class="part-num-col">
+      <div class="part-num">PART 04</div>
+      <div class="part-sections-list">08 Litigation<br>09 The builder Ceerose<br>10 Strata governance</div>
+    </div>
     <div class="part-body">
       <div class="part-title">Legal &amp; Governance</div>
       <div class="part-blurb">The active legal matters, the builder behind them, and how the scheme is being run.</div>
-      <div class="part-sections-list">08 Litigation · 09 The builder Ceerose · 10 Strata governance</div>
     </div>
     <div class="part-toggle"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
   </summary>
@@ -2237,41 +2460,41 @@ section[id^="s"] { scroll-margin-top: 60px; }
     <svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of three legal matters involving SP 90191">
       <defs>
         <marker id="arrowMaroon" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-          <path d="M0,0 L0,6 L9,3 z" fill="#800000"/>
+          <path d="M0,0 L0,6 L9,3 z" fill="var(--maroon)"/>
         </marker>
         <marker id="arrowGrey" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
           <path d="M0,0 L0,6 L9,3 z" fill="#666666"/>
         </marker>
       </defs>
-      <rect x="350" y="190" width="200" height="80" rx="4" fill="#000" stroke="#800000" stroke-width="3"/>
-      <text x="450" y="218" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" letter-spacing="2" fill="#d97a7a">OWNERS CORP</text>
-      <text x="450" y="244" text-anchor="middle" font-family="Archivo, sans-serif" font-size="18" font-weight="700" fill="#fff">SP 90191</text>
-      <text x="450" y="262" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">Arlington Grove</text>
+      <rect x="350" y="190" width="200" height="80" rx="4" fill="#000" stroke="var(--maroon)" stroke-width="3"/>
+      <text x="450" y="218" text-anchor="middle" font-family="Consolas, monospace" font-size="12" letter-spacing="2" fill="#d97a7a">OWNERS CORP</text>
+      <text x="450" y="244" text-anchor="middle" font-family="Lora, serif" font-size="20" font-weight="700" fill="#fff">SP 90191</text>
+      <text x="450" y="262" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">Arlington Grove</text>
 
-      <rect x="280" y="20" width="340" height="100" rx="4" fill="#fff" stroke="#800000" stroke-width="2"/>
-      <text x="450" y="44" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" letter-spacing="2" fill="#800000">CASE 1 · NSW SUPREME COURT</text>
-      <text x="450" y="68" text-anchor="middle" font-family="Archivo, sans-serif" font-size="14" font-weight="700" fill="#000">SP 90191 v Ceerose &amp; Galileo</text>
-      <text x="450" y="86" text-anchor="middle" font-family="DM Mono, monospace" font-size="11" fill="#666">Proc. 2023/315882 · CR SYD230148</text>
-      <text x="450" y="106" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-style="italic" fill="#800000">OC = Plaintiff · Building defects</text>
+      <rect x="280" y="20" width="340" height="100" rx="4" fill="#fff" stroke="var(--maroon)" stroke-width="2"/>
+      <text x="450" y="44" text-anchor="middle" font-family="Consolas, monospace" font-size="11" letter-spacing="2" fill="var(--maroon)">CASE 1 · NSW SUPREME COURT</text>
+      <text x="450" y="68" text-anchor="middle" font-family="Lora, serif" font-size="16" font-weight="700" fill="#000">SP 90191 v Ceerose &amp; Galileo</text>
+      <text x="450" y="86" text-anchor="middle" font-family="Consolas, monospace" font-size="13" fill="#666">Proc. 2023/315882 · CR SYD230148</text>
+      <text x="450" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-style="italic" fill="var(--maroon)">OC = Plaintiff · Building defects</text>
 
-      <rect x="40" y="320" width="320" height="100" rx="4" fill="#fff" stroke="#800000" stroke-width="2"/>
-      <text x="200" y="344" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" letter-spacing="2" fill="#800000">CASE 2 · NCAT</text>
-      <text x="200" y="368" text-anchor="middle" font-family="Archivo, sans-serif" font-size="14" font-weight="700" fill="#000">Farrugia v SP 90191</text>
-      <text x="200" y="386" text-anchor="middle" font-family="DM Mono, monospace" font-size="11" fill="#666">Proc. 2025/00296898 · CR SYD251943</text>
-      <text x="200" y="406" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-style="italic" fill="#800000">OC = Respondent · Lot 248 (Shop1)</text>
+      <rect x="40" y="320" width="320" height="100" rx="4" fill="#fff" stroke="var(--maroon)" stroke-width="2"/>
+      <text x="200" y="344" text-anchor="middle" font-family="Consolas, monospace" font-size="11" letter-spacing="2" fill="var(--maroon)">CASE 2 · NCAT</text>
+      <text x="200" y="368" text-anchor="middle" font-family="Lora, serif" font-size="16" font-weight="700" fill="#000">Farrugia v SP 90191</text>
+      <text x="200" y="386" text-anchor="middle" font-family="Consolas, monospace" font-size="13" fill="#666">Proc. 2025/00296898 · CR SYD251943</text>
+      <text x="200" y="406" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-style="italic" fill="var(--maroon)">OC = Respondent · Lot 248 (Shop1)</text>
 
       <rect x="540" y="320" width="320" height="100" rx="4" fill="#fff" stroke="#cccccc" stroke-width="2" stroke-dasharray="6 4"/>
-      <text x="700" y="344" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" letter-spacing="2" fill="#666">CASE 3 · THREATENED NCAT</text>
-      <text x="700" y="368" text-anchor="middle" font-family="Archivo, sans-serif" font-size="14" font-weight="700" fill="#000">Britton (Lot 233 / 2616)</text>
-      <text x="700" y="386" text-anchor="middle" font-family="DM Mono, monospace" font-size="11" fill="#666">Defective repairs claim</text>
-      <text x="700" y="406" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-style="italic" fill="#666">Ceerose now actively rectifying</text>
+      <text x="700" y="344" text-anchor="middle" font-family="Consolas, monospace" font-size="11" letter-spacing="2" fill="#666">CASE 3 · THREATENED NCAT</text>
+      <text x="700" y="368" text-anchor="middle" font-family="Lora, serif" font-size="16" font-weight="700" fill="#000">Britton (Lot 233 / 2616)</text>
+      <text x="700" y="386" text-anchor="middle" font-family="Consolas, monospace" font-size="13" fill="#666">Defective repairs claim</text>
+      <text x="700" y="406" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-style="italic" fill="#666">Ceerose now actively rectifying</text>
 
-      <line x1="450" y1="190" x2="450" y2="125" stroke="#800000" stroke-width="2" marker-end="url(#arrowMaroon)"/>
-      <text x="468" y="160" font-family="DM Mono, monospace" font-size="10" fill="#800000">sues</text>
+      <line x1="450" y1="190" x2="450" y2="125" stroke="var(--maroon)" stroke-width="2" marker-end="url(#arrowMaroon)"/>
+      <text x="468" y="160" font-family="Consolas, monospace" font-size="12" fill="var(--maroon)">sues</text>
       <line x1="380" y1="270" x2="280" y2="320" stroke="#666" stroke-width="2" marker-end="url(#arrowGrey)"/>
-      <text x="265" y="298" font-family="DM Mono, monospace" font-size="10" fill="#666" text-anchor="end">defends</text>
+      <text x="265" y="298" font-family="Consolas, monospace" font-size="12" fill="#666" text-anchor="end">defends</text>
       <line x1="520" y1="270" x2="620" y2="320" stroke="#999" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#arrowGrey)"/>
-      <text x="635" y="298" font-family="DM Mono, monospace" font-size="10" fill="#666">facing</text>
+      <text x="635" y="298" font-family="Consolas, monospace" font-size="12" fill="#666">facing</text>
     </svg>
   </div>
 
@@ -2279,7 +2502,7 @@ section[id^="s"] { scroll-margin-top: 60px; }
   <p>Last orders 13 November 2025: directions hearing 14/11/2025 vacated; consent orders made — Second Defendant (Galileo) filing Amended List Response, Cross Summons, Cross-Claim List Statement; First Defendant (Ceerose) to file Cross-Claim Response by 12/12/2025; relisted for Directions on <strong>20 February 2026</strong>. Second Defendant ordered to pay OC's costs thrown away.</p>
 
   <h3>OC's solicitors — Chambers Russell Lawyers</h3>
-  <p style="font-size:13px;color:var(--mid-grey);">Paul Jurdeczka · Andrus Must (Senior Associate) · Nastasia Pechanats (Lawyer) · Nicole Ellul-Thorn · +61 2 8248 2800 · Level 15, 25 Martin Place, Sydney NSW 2000</p>
+  <p style="font-size:15px;color:var(--mid-grey);">Paul Jurdeczka · Andrus Must (Senior Associate) · Nastasia Pechanats (Lawyer) · Nicole Ellul-Thorn · +61 2 8248 2800 · Level 15, 25 Martin Place, Sydney NSW 2000</p>
 
   <div class="callout">
     <div class="callout-icon">!</div>
@@ -2299,7 +2522,7 @@ section[id^="s"] { scroll-margin-top: 60px; }
   <h3>Company profile</h3>
   <div class="stats-grid">
     <div class="stat-card alt compact"><div class="stat-label">Founded</div><div class="stat-value">1998</div><div class="stat-sub">28 years operating</div></div>
-    <div class="stat-card alt compact"><div class="stat-label">Founder · MD</div><div class="stat-value" style="font-size:16px">E. Doueihi</div><div class="stat-sub">Petersham / Willoughby</div></div>
+    <div class="stat-card alt compact"><div class="stat-label">Founder · MD</div><div class="stat-value" style="font-size:18px">E. Doueihi</div><div class="stat-sub">Petersham / Willoughby</div></div>
     <div class="stat-card alt compact"><div class="stat-label">Active 2026</div><div class="stat-value good-num">Yes</div><div class="stat-sub">Leichhardt 154-apt project filed</div></div>
     <div class="stat-card crit compact"><div class="stat-label">iCIRT Rating</div><div class="stat-value crit-num">None</div><div class="stat-sub">Not in public register</div></div>
   </div>
@@ -2363,8 +2586,8 @@ section[id^="s"] { scroll-margin-top: 60px; }
       <h3>Strata Manager</h3>
       <div class="stat-card alt" style="padding:24px;">
         <div class="stat-label">Strata Choice Pty Ltd</div>
-        <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:20px;color:var(--black);margin:8px 0;">Mark Loveridge</div>
-        <p style="font-size:12px;color:var(--mid-grey);margin:8px 0 0;">
+        <div style="font-family:'Lora',sans-serif;font-weight:700;font-size:22px;color:var(--black);margin:8px 0;">Mark Loveridge</div>
+        <p style="font-size:14px;color:var(--mid-grey);margin:8px 0 0;">
           Licence No. <strong>224770</strong><br>
           Phone <strong>1300 322 213</strong><br>
           <a href="mailto:info@stratachoice.com.au" style="color:var(--maroon);">info@stratachoice.com.au</a><br>
@@ -2372,7 +2595,7 @@ section[id^="s"] { scroll-margin-top: 60px; }
         </p>
       </div>
       <h4>Agency Agreement terms</h4>
-      <ul style="font-size:13px;">
+      <ul style="font-size:15px;">
         <li>Commenced <strong>01/10/2025</strong>, term 36 months</li>
         <li>Fee: <strong>$45,695 inc GST p.a.</strong> (Option 3 — no commissions)</li>
         <li>Annual increase: CPI</li>
@@ -2384,8 +2607,8 @@ section[id^="s"] { scroll-margin-top: 60px; }
       <h3>Building Manager</h3>
       <div class="stat-card alt" style="padding:24px;">
         <div class="stat-label">Sydney Building Mgmt &amp; Projects (SBMP)</div>
-        <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:20px;color:var(--black);margin:8px 0;">Apartment Projects Pty Ltd</div>
-        <p style="font-size:12px;color:var(--mid-grey);margin:8px 0 0;">
+        <div style="font-family:'Lora',sans-serif;font-weight:700;font-size:22px;color:var(--black);margin:8px 0;">Apartment Projects Pty Ltd</div>
+        <p style="font-size:14px;color:var(--mid-grey);margin:8px 0 0;">
           ABN <strong>14 167 332 069</strong><br>
           Phone <strong>02 9056 7100</strong><br>
           <a href="mailto:info@sydneybmp.com.au" style="color:var(--maroon);">info@sydneybmp.com.au</a><br>
@@ -2393,7 +2616,7 @@ section[id^="s"] { scroll-margin-top: 60px; }
         </p>
       </div>
       <h4>Engagement context</h4>
-      <ul style="font-size:13px;">
+      <ul style="font-size:15px;">
         <li>Annual spend (Admin Fund): <strong>$138,302 YTD</strong> ($181,195 budget)</li>
         <li>By-Law 20 of consolidated by-laws governs the agreement</li>
         <li>Building Manager-issued welcome letters (suffixed "(BM)") to new owners</li>
@@ -2406,13 +2629,13 @@ section[id^="s"] { scroll-margin-top: 60px; }
   <h3>Consolidated By-Laws (25 January 2026)</h3>
   <p>31 standard by-laws plus 7 Special By-Laws:</p>
   <div class="building-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
-    <div class="building-card"><div class="building-name" style="font-size:14px;">SBL 1</div><div class="building-sub">Installation of blinds</div></div>
-    <div class="building-card"><div class="building-name" style="font-size:14px;">SBL 2</div><div class="building-sub">Lot 164 Glass Balustrade Works</div></div>
-    <div class="building-card"><div class="building-name" style="font-size:14px;">SBL 3</div><div class="building-sub">Works – Lot 78</div></div>
-    <div class="building-card"><div class="building-name" style="font-size:14px;">SBL 4</div><div class="building-sub">CCTV Security Cameras</div></div>
-    <div class="building-card"><div class="building-name" style="font-size:14px;">SBL 5</div><div class="building-sub">Prohibition of Smoking &amp; Vaping</div></div>
-    <div class="building-card"><div class="building-name" style="font-size:14px;">SBL 6</div><div class="building-sub">EV Charging Stations</div></div>
-    <div class="building-card"><div class="building-name" style="font-size:14px;">SBL 7</div><div class="building-sub">Lithium-Ion Battery Devices</div></div>
+    <div class="building-card"><div class="building-name" style="font-size:16px;">SBL 1</div><div class="building-sub">Installation of blinds</div></div>
+    <div class="building-card"><div class="building-name" style="font-size:16px;">SBL 2</div><div class="building-sub">Lot 164 Glass Balustrade Works</div></div>
+    <div class="building-card"><div class="building-name" style="font-size:16px;">SBL 3</div><div class="building-sub">Works – Lot 78</div></div>
+    <div class="building-card"><div class="building-name" style="font-size:16px;">SBL 4</div><div class="building-sub">CCTV Security Cameras</div></div>
+    <div class="building-card"><div class="building-name" style="font-size:16px;">SBL 5</div><div class="building-sub">Prohibition of Smoking &amp; Vaping</div></div>
+    <div class="building-card"><div class="building-name" style="font-size:16px;">SBL 6</div><div class="building-sub">EV Charging Stations</div></div>
+    <div class="building-card"><div class="building-name" style="font-size:16px;">SBL 7</div><div class="building-sub">Lithium-Ion Battery Devices</div></div>
   </div>
 </section>
   </div>
@@ -2420,11 +2643,13 @@ section[id^="s"] { scroll-margin-top: 60px; }
 
 <details class="part" id="part-V">
   <summary class="part-summary">
-    <div class="part-num">PART V</div>
+    <div class="part-num-col">
+      <div class="part-num">PART 05</div>
+      <div class="part-sections-list">11 Insurance &amp; compliance<br>12 Property market &amp; suburb context</div>
+    </div>
     <div class="part-body">
       <div class="part-title">Context</div>
       <div class="part-blurb">Insurance compliance and the suburb-level market frame around Lot 163.</div>
-      <div class="part-sections-list">11 Insurance &amp; compliance · 12 Property market &amp; suburb context</div>
     </div>
     <div class="part-toggle"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
   </summary>
@@ -2548,11 +2773,13 @@ section[id^="s"] { scroll-margin-top: 60px; }
 
 <details class="part" id="part-VI">
   <summary class="part-summary">
-    <div class="part-num">PART VI</div>
+    <div class="part-num-col">
+      <div class="part-num">PART 06</div>
+      <div class="part-sections-list">13 Lot 163 spotlight<br>14 Buyer risk matrix</div>
+    </div>
     <div class="part-body">
       <div class="part-title">Decision Support</div>
       <div class="part-blurb">Unit-specific analysis and the buyer-side risk matrix.</div>
-      <div class="part-sections-list">13 Lot 163 spotlight · 14 Buyer risk matrix</div>
     </div>
     <div class="part-toggle"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
   </summary>
@@ -2577,37 +2804,37 @@ section[id^="s"] { scroll-margin-top: 60px; }
       <div class="spotlight-item">
         <div class="key">Unit features</div>
         <div class="val">1 BR + study · 1 bath · 1 car</div>
-        <p style="margin:6px 0 0;font-size:12px;color:var(--mid-grey);">North-east aspect, leafy outlook, floor-to-ceiling glass to balcony, oak timber flooring, contemporary kitchen.</p>
+        <p style="margin:6px 0 0;font-size:14px;color:var(--mid-grey);">North-east aspect, leafy outlook, floor-to-ceiling glass to balcony, oak timber flooring, contemporary kitchen.</p>
       </div>
       <div class="spotlight-item">
         <div class="key">12-month forward levies</div>
         <div class="val">$8,822 total</div>
-        <p style="margin:6px 0 0;font-size:12px;color:var(--mid-grey);">$4,994 ordinary + $3,828 Motion 7 special (33 UE per registered Strata Roll). 1 May 2026 invoice ~$3,080.</p>
+        <p style="margin:6px 0 0;font-size:14px;color:var(--mid-grey);">$4,994 ordinary + $3,828 Motion 7 special (33 UE per registered Strata Roll). 1 May 2026 invoice ~$3,080.</p>
       </div>
       <div class="spotlight-item">
         <div class="key">Documented defect — directly above</div>
         <div class="val" style="color:var(--maroon)">Kona A Level 8 rooftop leak</div>
-        <p style="margin:6px 0 0;font-size:12px;color:var(--mid-grey);">Water leak / failed waterproofing at rooftop hatch — 03/04/2026 and 07/04/2026 emails — Lot 163 sits directly under it.</p>
+        <p style="margin:6px 0 0;font-size:14px;color:var(--mid-grey);">Water leak / failed waterproofing at rooftop hatch — 03/04/2026 and 07/04/2026 emails — Lot 163 sits directly under it.</p>
       </div>
       <div class="spotlight-item">
         <div class="key">Documented defect — at lobby</div>
         <div class="val" style="color:var(--maroon)">Fire damper FD-44 NON-COMPLIANT</div>
-        <p style="margin:6px 0 0;font-size:12px;color:var(--mid-grey);">"Gaps above duct" — Waratah Air Audit Nov 2022. Unrectified for 3+ years. Fire compartmentation at Lot 163's lobby compromised.</p>
+        <p style="margin:6px 0 0;font-size:14px;color:var(--mid-grey);">"Gaps above duct" — Waratah Air Audit Nov 2022. Unrectified for 3+ years. Fire compartmentation at Lot 163's lobby compromised.</p>
       </div>
       <div class="spotlight-item">
         <div class="key">Acoustic context</div>
         <div class="val">Same building as Apt 1101</div>
-        <p style="margin:6px 0 0;font-size:12px;color:var(--mid-grey);">Apt 1101 Kona A (Vincenza Zagarella) is severely affected by cafe ventilation noise — Kona A is a noise-affected building.</p>
+        <p style="margin:6px 0 0;font-size:14px;color:var(--mid-grey);">Apt 1101 Kona A (Vincenza Zagarella) is severely affected by cafe ventilation noise — Kona A is a noise-affected building.</p>
       </div>
       <div class="spotlight-item">
         <div class="key">Smoke alarm enquiry</div>
         <div class="val">27 March 2026</div>
-        <p style="margin:6px 0 0;font-size:12px;color:var(--mid-grey);">Property manager (Jennine Edwards, Richard Matthews Real Estate) emailed Strata Choice asking when last AFSS was carried out — flagging active concern.</p>
+        <p style="margin:6px 0 0;font-size:14px;color:var(--mid-grey);">Property manager (Jennine Edwards, Richard Matthews Real Estate) emailed Strata Choice asking when last AFSS was carried out — flagging active concern.</p>
       </div>
       <div class="spotlight-item">
         <div class="key">AED inspection coverage</div>
         <div class="val">Kona A Level 8 inspected</div>
-        <p style="margin:6px 0 0;font-size:12px;color:var(--mid-grey);">Both hallways inspected. Findings (78% of inspected units had defects) likely apply to Lot 163's hallway.</p>
+        <p style="margin:6px 0 0;font-size:14px;color:var(--mid-grey);">Both hallways inspected. Findings (78% of inspected units had defects) likely apply to Lot 163's hallway.</p>
       </div>
     </div>
   </div>
@@ -2639,11 +2866,13 @@ section[id^="s"] { scroll-margin-top: 60px; }
 
 <details class="part" id="part-VII">
   <summary class="part-summary">
-    <div class="part-num">PART VII</div>
+    <div class="part-num-col">
+      <div class="part-num">PART 07</div>
+      <div class="part-sections-list">15 References &amp; sources</div>
+    </div>
     <div class="part-body">
       <div class="part-title">References</div>
       <div class="part-blurb">Source documents, contacts, and provenance trail.</div>
-      <div class="part-sections-list">15 References &amp; sources</div>
     </div>
     <div class="part-toggle"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
   </summary>
@@ -2756,8 +2985,6 @@ section[id^="s"] { scroll-margin-top: 60px; }
       <tr><td>Builder analysis</td><td>NCAT — SP 102171 v Ceerose &amp; Zone Q (20/11/2025)</td><td class="num">External — Lawyerly news</td></tr>
     </tbody>
   </table>
-
-  <p style="font-size:12px;color:var(--mid-grey);margin-top:24px;">Library mounted from <code style="font-family:'DM Mono',monospace;">D:\Strata 90191</code> · 10,063 PDFs across 24 SMATA_* batch folders · ~14 GB · Plus 9 financial PDFs uploaded directly to chat.</p>
 </section>
   </div>
 </details>
@@ -2766,7 +2993,7 @@ section[id^="s"] { scroll-margin-top: 60px; }
   <div>
     <span class="org">SP 90191 ARLINGTON GROVE</span>
     &nbsp;&nbsp;<span class="crumb">·</span>&nbsp;&nbsp;
-    Strata Property Report &amp; Investment Analysis
+    Strata Property Report
   </div>
   <div>
     Compiled 26 April 2026
@@ -2775,70 +3002,167 @@ section[id^="s"] { scroll-margin-top: 60px; }
 
 </div>
 
+<!-- === Dynamic Island TOC === -->
+<div class="island-backdrop" id="islandBackdrop" aria-hidden="true"></div>
+<div class="island-toc" role="navigation" aria-label="Table of contents">
+  <div class="island-pill" id="islandPill">
+    <!-- Closed state -->
+    <div class="island-closed">
+      <span class="island-dot" aria-hidden="true"></span>
+      <span class="island-current" id="islandCurrent">Contents</span>
+      <svg class="island-progress" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <circle class="island-progress-track" cx="12" cy="12" r="10" fill="none" stroke-width="2.5"/>
+        <circle class="island-progress-fill" cx="12" cy="12" r="10" fill="none" stroke-width="2.5"
+                stroke-dasharray="62.832" stroke-dashoffset="62.832"
+                transform="rotate(-90 12 12)" stroke-linecap="round" id="islandProgress"/>
+      </svg>
+    </div>
+    <!-- Expanded state -->
+    <div class="island-expanded">
+      <div class="island-header">
+        <span class="island-label">Table of contents</span>
+        <button class="island-close" id="islandClose" aria-label="Close table of contents">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="island-list">
+        <button class="island-item" data-target="exec"><span class="island-item-text">Executive Summary</span><span class="island-item-indicator"></span></button>
+        <button class="island-item" data-target="brief"><span class="island-item-text">About this report</span><span class="island-item-indicator"></span></button>
+        <button class="island-item" data-target="part-I"><span class="island-item-text">Part 01 &mdash; Property Overview</span><span class="island-item-indicator"></span></button>
+        <button class="island-item" data-target="part-II"><span class="island-item-text">Part 02 &mdash; Finances</span><span class="island-item-indicator"></span></button>
+        <button class="island-item" data-target="part-III"><span class="island-item-text">Part 03 &mdash; Building Condition</span><span class="island-item-indicator"></span></button>
+        <button class="island-item" data-target="part-IV"><span class="island-item-text">Part 04 &mdash; Legal &amp; Governance</span><span class="island-item-indicator"></span></button>
+        <button class="island-item" data-target="part-V"><span class="island-item-text">Part 05 &mdash; Context</span><span class="island-item-indicator"></span></button>
+        <button class="island-item" data-target="part-VI"><span class="island-item-text">Part 06 &mdash; Decision Support</span><span class="island-item-indicator"></span></button>
+        <button class="island-item" data-target="part-VII"><span class="island-item-text">Part 07 &mdash; References</span><span class="island-item-indicator"></span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 (function() {
-  var nav = document.getElementById('stickyNav');
-  var hero = document.getElementById('top');
-  if (!nav || !hero) return;
+  // ===== Dynamic Island TOC =====
+  var pill = document.getElementById('islandPill');
+  var backdrop = document.getElementById('islandBackdrop');
+  var closeBtn = document.getElementById('islandClose');
+  var currentLabel = document.getElementById('islandCurrent');
+  var progressEl = document.getElementById('islandProgress');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.island-item'));
 
-  // Track exec, brief, and the 7 parts (matches the sticky-nav link set)
-  var trackables = Array.prototype.slice.call(
-    document.querySelectorAll('#exec, #brief, .part[id^="part-"]')
-  );
-  var navLinks = Array.prototype.slice.call(nav.querySelectorAll('.sticky-nav-links a'));
+  if (pill && backdrop && items.length) {
+    var trackables = items.map(function(item) {
+      return {
+        id: item.dataset.target,
+        text: item.querySelector('.island-item-text').textContent,
+        element: document.getElementById(item.dataset.target),
+        button: item
+      };
+    }).filter(function(t) { return t.element; });
 
-  function onScroll() {
-    var heroBottom = hero.getBoundingClientRect().bottom;
-    if (heroBottom < 40) {
-      nav.classList.add('visible');
-    } else {
-      nav.classList.remove('visible');
-    }
-
-    // Active highlight — find the trackable whose top has crossed the viewport-top threshold
-    var fromTop = window.scrollY + 80;
+    var CIRCUMFERENCE = 62.832; // 2 * pi * r where r=10
     var activeId = null;
-    for (var i = 0; i < trackables.length; i++) {
-      var el = trackables[i];
-      if (el.offsetTop <= fromTop) activeId = el.id;
+
+    function expand() {
+      pill.classList.add('expanded');
+      backdrop.classList.add('visible');
     }
-    navLinks.forEach(function(a) {
-      if (a.getAttribute('href') === '#' + activeId) a.classList.add('active');
-      else a.classList.remove('active');
+    function collapse() {
+      pill.classList.remove('expanded');
+      backdrop.classList.remove('visible');
+    }
+
+    pill.addEventListener('click', function() {
+      if (!pill.classList.contains('expanded')) expand();
+    });
+    closeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      collapse();
+    });
+    backdrop.addEventListener('click', collapse);
+
+    items.forEach(function(item) {
+      item.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var target = document.getElementById(item.dataset.target);
+        if (target) {
+          // Auto-open parent details if collapsed
+          var details = target.closest && target.closest('details');
+          if (details && !details.open) details.open = true;
+          // Smooth scroll
+          var y = target.getBoundingClientRect().top + window.scrollY - 20;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+        collapse();
+      });
+    });
+
+    function updateOnScroll() {
+      // Find active section
+      var current = null;
+      for (var i = 0; i < trackables.length; i++) {
+        var top = trackables[i].element.getBoundingClientRect().top;
+        if (top <= 120) current = trackables[i];
+        else break;
+      }
+      if (!current && trackables.length) current = trackables[0];
+
+      if (current && current.id !== activeId) {
+        activeId = current.id;
+        currentLabel.textContent = current.text;
+        items.forEach(function(item) {
+          if (item.dataset.target === activeId) item.classList.add('active');
+          else item.classList.remove('active');
+        });
+      }
+
+      // Progress ring
+      var total = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = total > 0 ? Math.min(100, Math.max(0, (window.scrollY / total) * 100)) : 0;
+      progressEl.style.strokeDashoffset = CIRCUMFERENCE - (pct / 100) * CIRCUMFERENCE;
+    }
+
+    window.addEventListener('scroll', updateOnScroll, { passive: true });
+    window.addEventListener('resize', updateOnScroll);
+    updateOnScroll();
+
+    // ESC closes
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && pill.classList.contains('expanded')) collapse();
     });
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
-  onScroll();
-
-// Auto-open <details class="part"> when navigating to a section anchor inside it
-function openParentDetails() {
-  var hash = window.location.hash;
-  if (!hash || hash.length < 2) return;
-  var target = document.querySelector(hash);
-  if (!target) return;
-  var details = target.closest('details');
-  if (details && !details.open) {
-    details.open = true;
-    // Re-scroll because the element position changes once the details opens
-    setTimeout(function() { target.scrollIntoView({behavior: 'instant', block: 'start'}); }, 50);
+  // ===== Auto-open <details> when navigating to nested anchors =====
+  function openParentDetails() {
+    var hash = window.location.hash;
+    if (!hash || hash.length < 2) return;
+    var target;
+    try { target = document.querySelector(hash); } catch (e) { return; }
+    if (!target) return;
+    var details = target.closest('details');
+    if (details && !details.open) {
+      details.open = true;
+      setTimeout(function() { target.scrollIntoView({ behavior: 'instant', block: 'start' }); }, 50);
+    }
   }
-}
-window.addEventListener('hashchange', openParentDetails);
-window.addEventListener('load', openParentDetails);
-// Intercept TOC / sticky-nav clicks
-document.addEventListener('click', function(e) {
-  var a = e.target.closest('a[href^="#"]');
-  if (!a) return;
-  var hash = a.getAttribute('href');
-  if (hash.length < 2) return;
-  var target = document.querySelector(hash);
-  if (!target) return;
-  var details = target.closest('details');
-  if (details && !details.open) details.open = true;
-});
+  window.addEventListener('hashchange', openParentDetails);
+  window.addEventListener('load', openParentDetails);
 
+  // Intercept any anchor click to auto-open parent details
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var hash = a.getAttribute('href');
+    if (hash.length < 2) return;
+    var target;
+    try { target = document.querySelector(hash); } catch (err) { return; }
+    if (!target) return;
+    var details = target.closest('details');
+    if (details && !details.open) details.open = true;
+  });
 })();
 </script>
 
