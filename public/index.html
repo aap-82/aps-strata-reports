@@ -502,8 +502,8 @@
   .meth-header .eyebrow {
     color: var(--aps-accent);
     font-family: var(--ff-mono);
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 800;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     margin: 0 0 14px;
@@ -877,7 +877,7 @@
     color: var(--aps-accent);
     font-family: var(--ff-mono);
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 800;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     margin: 0 0 14px;
@@ -1046,16 +1046,17 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    padding: 18px 28px;
-    background: var(--aps-accent);
-    color: var(--aps-paper);
+    padding: 16px 26px;
+    background: transparent;
+    color: var(--aps-accent);
+    border: 2px solid var(--aps-accent);
     text-decoration: none;
     font-family: var(--ff-display);
     font-weight: 700;
     font-size: 19px;
     letter-spacing: -0.005em;
-    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
-    box-shadow: 0 1px 2px rgba(128,0,0,0.15), 0 8px 20px rgba(128,0,0,0.18);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+    box-shadow: none;
     align-self: flex-start;
     max-width: 480px;
     width: 100%;
@@ -1067,19 +1068,11 @@
   }
   .example-btn:hover {
     transform: translateY(-1px);
-    background: #6b0000;
-    box-shadow: 0 2px 4px rgba(128,0,0,0.2), 0 12px 28px rgba(128,0,0,0.22);
+    background: var(--aps-accent);
+    color: var(--aps-paper);
+    box-shadow: 0 8px 20px rgba(128,0,0,0.18);
   }
   .example-btn:hover .example-btn-arrow { transform: translateX(4px); }
-  .example-card-note {
-    font-family: var(--ff-mono);
-    font-size: 13px;
-    color: var(--aps-mute);
-    margin: 0;
-    line-height: 1.4;
-    max-width: 56ch;
-  }
-
   @media (max-width: 880px) {
     .meet-credentials { grid-template-columns: 1fr; gap: 8px; }
     .example { padding: 0 24px; }
@@ -1134,13 +1127,14 @@
     <div class="pillar">
       <p class="pillar-num">02 · AI Analysis</p>
       <h3 class="pillar-title">Doesn't miss a page.</h3>
-      <p>Our proprietary AI document analysis tool reads the full strata library — minutes, financials, expert reports, correspondence, invoices. It surfaces inconsistencies, finds patterns, and flags what's missing. Most strata reports stop at 3 years; we analyse every document available — whether that's 5 years of records or 10.</p>
-      <p class="pillar-stat"><strong>Largest job to date</strong> &nbsp;·&nbsp; 8,700 documents + 1,400 invoices &nbsp;·&nbsp; 7 years analysed</p>
+      <p>Our proprietary AI document analysis tool reads the full strata library — minutes, financials, expert reports, correspondence, invoices. It surfaces inconsistencies, finds patterns, and flags what's missing. Most strata reports stop at 3 years; we analyse every document available — whether that's 3, 5 or 10 years of documents.</p>
+      <p class="pillar-stat"><strong>Largest job to date</strong> &nbsp;·&nbsp; 10,039 &nbsp;·&nbsp; 9 years analysed</p>
+       <p class="pillar-stat"><strong>*</strong> &nbsp;Dependent on Strata managers available records</p>
     </div>
     <div class="pillar">
       <p class="pillar-num">03 · Client-focused</p>
       <h3 class="pillar-title">Same-day verbal, detailed final.</h3>
-      <p>Straight after the inspection, Dominic calls with a verbal briefing — what he found, what matters most, what to do next. The final written report follows: photos, page references, and remediation advice, shaped to your property.</p>
+      <p>Straight after the inspection, Dominic calls with a verbal briefing — what he found, what matters most, what to do next. The final written report follows: photos, page references, and remediation advice aligned with NCC and Australian Standards, encompassing your property.</p>
     </div>
   </div>
 
@@ -1177,7 +1171,7 @@
 
 <section class="example" id="example">
   <div class="example-inner">
-    <p class="example-eyebrow">An Example Report</p>
+    <p class="eyebrow">An Example Report</p>
     <h2 class="example-heading">See it for yourself.</h2>
     <p class="example-lede">Below is a real (anonymised) Access Property Services strata report. Open it to see the executive summary, property overview, financials, defects analysis, market context, and decision-support framework — exactly the structure your report would follow.</p>
 
@@ -1199,7 +1193,7 @@
         <div class="estat"><div class="estat-num">247</div><div class="estat-lab">Lots in<br>scheme</div></div>
         <div class="estat"><div class="estat-num">10,039</div><div class="estat-lab">Documents<br>analysed</div></div>
         <div class="estat"><div class="estat-num">9</div><div class="estat-lab">Years<br>analysed</div></div>
-        <div class="estat"><div class="estat-num">11</div><div class="estat-lab">Days<br>turnaround</div></div>
+        <div class="estat"><div class="estat-num">2</div><div class="estat-lab">Days turnaround <br>AFTER STRATA RECORDS ACCESS</div></div>
       </div>
 
       <div class="example-card-cta">
@@ -1211,7 +1205,6 @@
           <span class="example-btn-label">Open the example report</span>
           <span class="example-btn-arrow">→</span>
         </a>
-        <p class="example-card-note">Identifying details have been anonymised. All findings, sources and figures are accurate to the underlying inspection.</p>
       </div>
     </article>
   </div>
