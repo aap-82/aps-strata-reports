@@ -934,11 +934,27 @@ footer {
 }
 footer .org { color: rgba(255,255,255,0.6); }
 footer .crumb { color: rgba(255,255,255,0.4); }
-
+/* === Mobile overflow safety === */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+.page {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 20px 0;
+}
+.table-scroll table.data {
+  margin: 0;
+}
 @media (max-width: 768px) {
   .hero { padding: 40px 24px 32px; }
   .hero h1 { font-size: 32px; }
-  section { padding: 40px 24px; }
+  section { padding: 32px 16px; }
   .toc { padding: 24px; }
   .building-grid { grid-template-columns: repeat(2, 1fr); }
   .risk-grid { grid-template-columns: 1fr; }
@@ -946,6 +962,11 @@ footer .crumb { color: rgba(255,255,255,0.4); }
   .tier-grid { grid-template-columns: 1fr; }
   .two-col { grid-template-columns: 1fr; }
   footer { padding: 24px; }
+  .diagram-wrap { padding: 16px 12px; }
+  table.data thead th { padding: 12px 10px; font-size: 13px; }
+  table.data tbody td { padding: 12px 10px; font-size: 13px; }
+  table.data tbody td.num { font-size: 13px; }
+  .table-scroll { margin: 16px -4px; }
 }
 
 @media print {
@@ -2093,7 +2114,8 @@ section[id^="s"] { scroll-margin-top: 20px; }
   </div>
 
   <h3>Balance sheet snapshot — 24 April 2026</h3>
-  <table class="data">
+  <div class="table-scroll">
+<table class="data">
     <thead>
       <tr><th>Component</th><th class="right">Admin Fund</th><th class="right">Capital Works Fund</th><th class="right">Total</th></tr>
     </thead>
@@ -2104,7 +2126,8 @@ section[id^="s"] { scroll-margin-top: 20px; }
       <tr><td>Less: liabilities</td><td class="right">($144,856)</td><td class="right">($151,148)</td><td class="right">($296,004)</td></tr>
       <tr class="highlight"><td><strong>Fund equity</strong></td><td class="right"><strong>($73,385)</strong></td><td class="right"><strong>$333,629</strong></td><td class="right"><strong>$260,244</strong></td></tr>
     </tbody>
-  </table>
+ </table>
+</div>
 
   <div class="callout note">
     <div class="callout-icon">i</div>
@@ -2123,7 +2146,7 @@ section[id^="s"] { scroll-margin-top: 20px; }
   <p class="section-intro">Authorised by EGM 16 February 2026 (Motion 7) under s81(4) SSMA 2015. Funds investigation, legal costs, and scope-of-works preparation — <em>not</em> actual rectification works. Two parallel $2M loan motions (StrataCash, Lannock) were both defeated.</p>
 
   <h3>Per-UE rates (current FY 2025–26)</h3>
-  <table class="data">
+ <div class="table-scroll"> <table class="data">
     <thead>
       <tr><th>Fund</th><th class="right">Per UE per year (inc GST)</th><th class="right">Scheme-wide annual revenue</th></tr>
     </thead>
@@ -2133,7 +2156,7 @@ section[id^="s"] { scroll-margin-top: 20px; }
       <tr class="highlight"><td>Combined ordinary annual rate</td><td class="right"><strong>$142.98</strong></td><td class="right"><strong>$1,429,801</strong></td></tr>
     </tbody>
   </table>
-
+</div>
   <h3>Motion 7 instalment schedule</h3>
   <div class="timeline">
     <div class="timeline-track">
@@ -2224,7 +2247,7 @@ section[id^="s"] { scroll-margin-top: 20px; }
   </div>
 
   <h3>Expert reports forming the litigation evidence base</h3>
-  <table class="data">
+ <div class="table-scroll"> <table class="data">
     <thead><tr><th>Date</th><th>Expert</th><th>Subject</th></tr></thead>
     <tbody>
       <tr><td class="num">09/05/2019</td><td>RHM Consultants</td><td>Original general defects</td></tr>
@@ -2239,7 +2262,7 @@ section[id^="s"] { scroll-margin-top: 20px; }
       <tr><td class="num">ongoing</td><td>Diagnostech</td><td>Being finalised (per Chambers Russell, 14 Nov 2025)</td></tr>
     </tbody>
   </table>
-
+</div>
   <div class="callout">
     <div class="callout-icon">!</div>
     <div class="callout-body">
@@ -2320,7 +2343,7 @@ section[id^="s"] { scroll-margin-top: 20px; }
   </div>
 
   <h3>Acoustic experts engaged</h3>
-  <table class="data">
+ <div class="table-scroll"> <table class="data">
     <thead><tr><th>Expert</th><th>Engagement</th><th class="right">Cost</th></tr></thead>
     <tbody>
       <tr>
@@ -2335,7 +2358,7 @@ section[id^="s"] { scroll-margin-top: 20px; }
       </tr>
     </tbody>
   </table>
-
+</div>
   <div class="callout note">
     <div class="callout-icon">i</div>
     <div class="callout-body">
@@ -2404,7 +2427,7 @@ section[id^="s"] { scroll-margin-top: 20px; }
   </div>
 
   <h3>AED further investigation programme — authorised at EGM 16/02/2026</h3>
-  <table class="data">
+ <div class="table-scroll"> <table class="data">
     <thead><tr><th>Motion / Option</th><th>Coverage</th><th class="right">Cost (ex GST)</th><th>Status</th></tr></thead>
     <tbody>
       <tr class="highlight"><td>Motion 3 / Option A</td><td>185 units (100% common areas)</td><td class="right">$100,500</td><td><span class="pill won">SELECTED</span></td></tr>
@@ -2414,7 +2437,7 @@ section[id^="s"] { scroll-margin-top: 20px; }
       <tr class="highlight"><td><strong>Total authorised</strong></td><td></td><td class="right"><strong>$122,000 ex GST</strong></td><td>= $134,200 inc GST</td></tr>
     </tbody>
   </table>
-
+</div>
   <h3>Real fire incident — Unit 5208 · August 2025</h3>
   <div class="callout warn">
     <div class="callout-icon">⚠</div>
@@ -2662,7 +2685,7 @@ section[id^="s"] { scroll-margin-top: 20px; }
   <p class="section-intro">Standard Residential Strata Insurance with comprehensive cover, but with a specific exclusion for building defects identified in the named expert reports.</p>
 
   <h3>Current policy</h3>
-  <table class="data">
+ <div class="table-scroll"> <table class="data">
     <thead><tr><th>Field</th><th>Detail</th></tr></thead>
     <tbody>
       <tr><td>Insurer / UW Agency</td><td>Strata Unit Underwriting Agency Pty Ltd · Underwritten by Insurance Australia Ltd (CGU)</td></tr>
@@ -2678,9 +2701,9 @@ section[id^="s"] { scroll-margin-top: 20px; }
       <tr><td>Fidelity Guarantee</td><td>$100,000</td></tr>
     </tbody>
   </table>
-
+</div>
   <h3>Recent insurance claims (per SGS Report 249578, 18 Apr 2026)</h3>
-  <table class="data">
+ <div class="table-scroll"> <table class="data">
     <thead><tr><th>Date</th><th>Event</th><th class="right">Outcome</th></tr></thead>
     <tbody>
       <tr><td>12 Feb 2024</td><td>Unit 1005 — sewage ingress in Basement B1 storage cage</td><td class="right">Claim ongoing</td></tr>
@@ -2690,10 +2713,10 @@ section[id^="s"] { scroll-margin-top: 20px; }
       <tr><td>15 Jun 2023</td><td>Possible OBL matter — owner's mother fall injury (Felicio email)</td><td class="right">Status TBC</td></tr>
     </tbody>
   </table>
-
+</div>
   <h3>Insurance valuation</h3>
   <p>By <strong>A G Thomas Valuers</strong> (ABN 58 053 159 569) dated <strong>6 August 2025</strong>:</p>
-  <table class="data">
+ <div class="table-scroll"> <table class="data">
     <thead><tr><th>Cost component</th><th class="right">Amount</th></tr></thead>
     <tbody>
       <tr><td>Replacement and/or reinstatement cost for all buildings</td><td class="right">$109,343,157</td></tr>
@@ -2704,7 +2727,7 @@ section[id^="s"] { scroll-margin-top: 20px; }
       <tr class="highlight"><td><strong>Total recommended sum insured</strong></td><td class="right"><strong>$155,755,000</strong></td></tr>
     </tbody>
   </table>
-
+</div>
   <div class="callout warn">
     <div class="callout-icon">!</div>
     <div class="callout-body">
@@ -2733,7 +2756,7 @@ section[id^="s"] { scroll-margin-top: 20px; }
   <p class="comp-context">Sources: CoreLogic suburb stats April 2026, Domain &amp; realestate.com.au listings, NSW Rent &amp; Sales reports for 2203 postcode. Figures rounded; treat as guidance not appraisal.</p>
 
   <h3>Comparable sales — Arlington Grove (within building)</h3>
-  <table class="data">
+ <div class="table-scroll"> <table class="data">
     <thead>
       <tr><th>Unit</th><th>Type</th><th>UE</th><th class="right">Sale price</th><th class="right">$/UE</th><th>Defect disclosure</th></tr>
     </thead>
@@ -2744,6 +2767,7 @@ section[id^="s"] { scroll-margin-top: 20px; }
       <tr class="highlight"><td><strong>Lot 163</strong></td><td>1BR + study</td><td>24.22</td><td class="right">— pending —</td><td class="right">— derived below —</td><td>Active litigation, Motion 7</td></tr>
     </tbody>
   </table>
+   </div>
   <p class="comp-context">No recent 1BR comparables visible at Arlington Grove — derivation below uses the 2BR $/UE benchmark. UE counts for 2BR units estimated from typical Arlington Grove allocation (~38 UE = 2BR + car).</p>
 
   <h3>The Sydney Metro tailwind</h3>
@@ -2964,7 +2988,7 @@ section[id^="s"] { scroll-margin-top: 20px; }
   </div>
 
   <h3>Primary-source documents</h3>
-  <table class="data">
+ <div class="table-scroll"> <table class="data">
     <thead><tr><th>Topic</th><th>Document</th><th>Library path</th></tr></thead>
     <tbody>
       <tr><td>Q1, Q8, Q17</td><td>Capital Works Fund Plan (Sageview, 4 June 2018)</td><td class="num">SMATA_1777005256569/.../CWF Plan/...20.pdf</td></tr>
@@ -2985,6 +3009,7 @@ section[id^="s"] { scroll-margin-top: 20px; }
       <tr><td>Builder analysis</td><td>NCAT — SP 102171 v Ceerose &amp; Zone Q (20/11/2025)</td><td class="num">External — Lawyerly news</td></tr>
     </tbody>
   </table>
+   </div>
 </section>
   </div>
 </details>
