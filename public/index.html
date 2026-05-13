@@ -6,7 +6,7 @@
 <title>Strata Reports · Access Property Services</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --aps-ink: #0D0D0D;
@@ -20,9 +20,9 @@
     --aps-bg-warm: #ECE9E1;
     --aps-accent: #800000;
     --aps-accent-ink: #FFFFFF;
-    --ff-display: 'Archivo', system-ui, sans-serif;
-    --ff-body: 'DM Sans', system-ui, sans-serif;
-    --ff-mono: 'DM Mono', ui-monospace, monospace;
+    --ff-display: 'Lora', serif;
+    --ff-body: 'Arial', sans-serif;
+    --ff-mono: 'Consolas', monospace;
     --shadow-card: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
     --shadow-card-hover: 0 2px 4px rgba(0,0,0,0.06), 0 16px 40px rgba(0,0,0,0.10);
   }
@@ -30,7 +30,7 @@
   html, body { margin: 0; padding: 0; }
   body {
     font-family: var(--ff-body);
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.55;
     color: var(--aps-text);
     background: var(--aps-bg);
@@ -64,7 +64,7 @@
   .brand {
     font-family: var(--ff-display);
     font-weight: 800;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: -0.01em;
     color: var(--aps-ink);
     text-decoration: none;
@@ -82,7 +82,7 @@
   }
   .brand-sub {
     font-family: var(--ff-mono);
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -93,7 +93,7 @@
   }
   .topbar-meta {
     font-family: var(--ff-mono);
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--aps-mute);
@@ -107,8 +107,8 @@
   }
   .eyebrow {
     font-family: var(--ff-mono);
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 800;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--aps-mute);
@@ -127,7 +127,7 @@
   .hero h1 {
     font-family: var(--ff-display);
     font-weight: 700;
-    font-size: clamp(40px, 6vw, 68px);
+    font-size: clamp(42px, 6vw, 70px);
     line-height: 1.02;
     letter-spacing: -0.025em;
     color: var(--aps-ink);
@@ -140,7 +140,7 @@
     color: var(--aps-mute);
   }
   .hero-lede {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.55;
     color: var(--aps-text);
     max-width: 56ch;
@@ -162,7 +162,7 @@
   }
   .section-rule-label {
     font-family: var(--ff-mono);
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -170,7 +170,7 @@
   }
   .section-rule-count {
     font-family: var(--ff-mono);
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -299,7 +299,7 @@
     gap: 12px;
     flex-wrap: wrap;
     font-family: var(--ff-mono);
-    font-size: 10.5px;
+    font-size: 12.5px;
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -312,7 +312,7 @@
     background: var(--aps-accent);
     color: var(--aps-accent-ink);
     padding: 4px 9px 3px;
-    font-size: 9.5px;
+    font-size: 11.5px;
     font-weight: 600;
     letter-spacing: 0.08em;
     line-height: 1.25;
@@ -337,25 +337,25 @@
   .report-title {
     font-family: var(--ff-display);
     font-weight: 700;
-    font-size: 22px;
+    font-size: 24px;
     line-height: 1.18;
     letter-spacing: -0.015em;
     color: var(--aps-ink);
     margin: 0;
   }
   .report-card.is-featured .report-title {
-    font-size: 30px;
+    font-size: 32px;
     line-height: 1.12;
     letter-spacing: -0.02em;
   }
   .report-desc {
-    font-size: 14.5px;
+    font-size: 16.5px;
     line-height: 1.55;
     color: var(--aps-mute);
     margin: 0;
   }
   .report-card.is-featured .report-desc {
-    font-size: 16px;
+    font-size: 18px;
     max-width: 52ch;
   }
 
@@ -367,7 +367,7 @@
     flex-wrap: wrap;
     gap: 18px;
     font-family: var(--ff-mono);
-    font-size: 11px;
+    font-size: 13px;
     color: var(--aps-mute);
     letter-spacing: 0.04em;
   }
@@ -383,7 +383,7 @@
     align-items: center;
     gap: 10px;
     font-family: var(--ff-mono);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -447,7 +447,7 @@
   .meet-heading {
     font-family: var(--ff-display);
     font-weight: 700;
-    font-size: clamp(24px, 3vw, 34px);
+    font-size: clamp(26px, 3vw, 36px);
     line-height: 1.15;
     letter-spacing: -0.015em;
     color: var(--aps-ink);
@@ -455,7 +455,7 @@
     max-width: 22ch;
   }
   .meet-bio {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     color: var(--aps-text);
     margin: 0 0 28px;
@@ -467,7 +467,7 @@
     align-items: center;
     gap: 10px;
     font-family: var(--ff-mono);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -502,7 +502,7 @@
   .meth-header .eyebrow {
     color: var(--aps-accent);
     font-family: var(--ff-mono);
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -522,7 +522,7 @@
   .meth-heading {
     font-family: var(--ff-display);
     font-weight: 700;
-    font-size: clamp(28px, 4vw, 40px);
+    font-size: clamp(30px, 4vw, 42px);
     line-height: 1.1;
     letter-spacing: -0.02em;
     color: var(--aps-ink);
@@ -530,7 +530,7 @@
     max-width: 20ch;
   }
   .meth-lede {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     color: var(--aps-text);
     margin: 0;
@@ -562,7 +562,7 @@
   }
   .pillar-num {
     font-family: var(--ff-mono);
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -572,14 +572,14 @@
   .pillar-title {
     font-family: var(--ff-display);
     font-weight: 700;
-    font-size: 21px;
+    font-size: 23px;
     line-height: 1.2;
     letter-spacing: -0.01em;
     color: var(--aps-ink);
     margin: 0 0 14px;
   }
   .pillar p {
-    font-size: 14.5px;
+    font-size: 16.5px;
     line-height: 1.6;
     color: var(--aps-text);
     margin: 0;
@@ -589,7 +589,7 @@
     padding-top: 14px;
     border-top: 1px solid var(--aps-line-light);
     font-family: var(--ff-mono) !important;
-    font-size: 10.5px !important;
+    font-size: 12.5px !important;
     font-weight: 500;
     letter-spacing: 0.04em;
     color: var(--aps-mute) !important;
@@ -606,7 +606,7 @@
     font-family: var(--ff-display);
     font-weight: 500;
     font-style: italic;
-    font-size: clamp(18px, 2.2vw, 22px);
+    font-size: clamp(20px, 2.2vw, 24px);
     line-height: 1.4;
     color: var(--aps-mute);
     margin: 40px auto 0;
@@ -651,7 +651,7 @@
   .contact-heading {
     font-family: var(--ff-display);
     font-weight: 700;
-    font-size: clamp(28px, 4vw, 44px);
+    font-size: clamp(30px, 4vw, 46px);
     line-height: 1.08;
     letter-spacing: -0.02em;
     color: var(--aps-ink);
@@ -659,7 +659,7 @@
     max-width: 18ch;
   }
   .contact-lede {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.55;
     color: var(--aps-text);
     margin: 0;
@@ -685,7 +685,7 @@
   }
   .contact-btn-label {
     font-family: var(--ff-mono);
-    font-size: 10.5px;
+    font-size: 12.5px;
     font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -693,7 +693,7 @@
   }
   .contact-btn-email {
     font-family: var(--ff-body);
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 600;
     letter-spacing: -0.005em;
     overflow-wrap: anywhere;
@@ -704,7 +704,7 @@
     top: 50%;
     right: 24px;
     transform: translateY(-50%);
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1;
     transition: transform 0.25s ease;
   }
@@ -727,7 +727,7 @@
     align-items: center;
     gap: 24px;
     font-family: var(--ff-mono);
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--aps-mute);
@@ -741,7 +741,7 @@
     .report-card.is-featured { grid-column: span 12; flex-direction: column; }
     .report-card.is-featured .report-thumb { flex: 0 0 auto; height: 240px; border-right: none; border-bottom: 1px solid var(--aps-line); }
     .report-card.is-featured .report-body { padding: 28px; }
-    .report-card.is-featured .report-title { font-size: 24px; }
+    .report-card.is-featured .report-title { font-size: 26px; }
     .hero { padding: 56px 24px 40px; }
     .topbar-inner, .section-rule, .reports, .footer-inner { padding-left: 24px; padding-right: 24px; }
     .reports { gap: 20px; }
@@ -761,7 +761,7 @@
     }
     .contact-text { min-width: 0; }
     .contact-btn { width: 100%; min-width: 0; padding: 20px 22px; }
-    .contact-btn-email { font-size: 14.5px; line-height: 1.35; }
+    .contact-btn-email { font-size: 16.5px; line-height: 1.35; }
     .contact-btn-arrow { display: none; }
     .brand-sub { display: none; }
     .topbar-meta { display: none; }
@@ -787,14 +787,14 @@
     text-decoration: none;
     font-family: var(--ff-display);
     font-weight: 600;
-    font-size: 15px;
+    font-size: 17px;
     letter-spacing: 0.01em;
     transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
     box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 6px 14px rgba(0,0,0,0.08);
   }
   .hero-cta .arrow {
     font-family: var(--ff-mono);
-    font-size: 14px;
+    font-size: 16px;
     transition: transform 0.18s ease;
   }
   .hero-cta:hover {
@@ -829,13 +829,13 @@
   .meet-photo-tag-name {
     font-family: var(--ff-display);
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
     color: var(--aps-ink);
     letter-spacing: -0.01em;
   }
   .meet-photo-tag-role {
     font-family: var(--ff-mono);
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.06em;
     color: var(--aps-mute);
     text-transform: uppercase;
@@ -852,13 +852,13 @@
     display: flex;
     align-items: baseline;
     gap: 10px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.45;
     color: var(--aps-text);
   }
   .meet-credentials .cred-mark {
     color: var(--aps-accent);
-    font-size: 9px;
+    font-size: 11px;
     line-height: 1;
     flex-shrink: 0;
     margin-top: 4px;
@@ -876,7 +876,7 @@
   .example .eyebrow {
     color: var(--aps-accent);
     font-family: var(--ff-mono);
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -896,14 +896,14 @@
   .example-heading {
     font-family: var(--ff-display);
     font-weight: 700;
-    font-size: clamp(28px, 4vw, 40px);
+    font-size: clamp(30px, 4vw, 42px);
     line-height: 1.1;
     letter-spacing: -0.02em;
     color: var(--aps-ink);
     margin: 0 0 18px;
   }
   .example-lede {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     color: var(--aps-text);
     margin: 0 0 36px;
@@ -923,7 +923,7 @@
     content: "";
     position: absolute;
     top: 0; left: 0;
-    width: 5px; height: 100%;
+    width: 100%; height: 5px;
     background: var(--aps-accent);
   }
   .example-card-meta {
@@ -934,8 +934,8 @@
   }
   .example-card-eyebrow {
     font-family: var(--ff-mono);
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 800;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--aps-mute);
@@ -944,14 +944,14 @@
   .example-card-title {
     font-family: var(--ff-display);
     font-weight: 700;
-    font-size: 30px;
+    font-size: 32px;
     line-height: 1.1;
     letter-spacing: -0.02em;
     color: var(--aps-ink);
     margin: 0 0 14px;
   }
   .example-card-desc {
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.6;
     color: var(--aps-text);
     margin: 0 0 18px;
@@ -967,7 +967,7 @@
     background: var(--aps-bg-warm);
     color: var(--aps-text);
     font-family: var(--ff-mono);
-    font-size: 10.5px;
+    font-size: 12.5px;
     font-weight: 500;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -993,14 +993,14 @@
   .estat-num {
     font-family: var(--ff-display);
     font-weight: 800;
-    font-size: 36px;
+    font-size: 38px;
     line-height: 1;
     color: var(--aps-accent);
     letter-spacing: -0.025em;
   }
   .estat-lab {
     font-family: var(--ff-mono);
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -1023,7 +1023,7 @@
     background: #fdfaf3;
     border: 1px solid #ead8b7;
     border-left: 3px solid #b88600;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
     color: var(--aps-text);
   }
@@ -1037,7 +1037,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
     margin-top: 1px;
   }
@@ -1052,7 +1052,7 @@
     text-decoration: none;
     font-family: var(--ff-display);
     font-weight: 700;
-    font-size: 17px;
+    font-size: 19px;
     letter-spacing: -0.005em;
     transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
     box-shadow: 0 1px 2px rgba(128,0,0,0.15), 0 8px 20px rgba(128,0,0,0.18);
@@ -1062,7 +1062,7 @@
   }
   .example-btn-arrow {
     font-family: var(--ff-mono);
-    font-size: 18px;
+    font-size: 20px;
     transition: transform 0.18s ease;
   }
   .example-btn:hover {
@@ -1073,7 +1073,7 @@
   .example-btn:hover .example-btn-arrow { transform: translateX(4px); }
   .example-card-note {
     font-family: var(--ff-mono);
-    font-size: 11px;
+    font-size: 13px;
     color: var(--aps-mute);
     margin: 0;
     line-height: 1.4;
@@ -1109,7 +1109,7 @@
 
 <section class="hero">
   <p class="eyebrow">Access Property Services · Pre-Purchase Strata Reports</p>
-  <h1>Builder's eye. <em>AI's reach.</em></h1>
+  <h1>Builder's eye.<br><em>AI's reach.</em></h1>
   <p class="hero-lede">Forensic pre-purchase strata reports for Sydney apartments. A NSW-licensed builder on site, proprietary AI on the documents — every minute, financial, expert report and invoice in the strata library. Same-day verbal briefing. Detailed written report with sources throughout.</p>
   <div class="hero-cta-row">
     <a class="hero-cta" href="#example">See an example report <span class="arrow">→</span></a>
@@ -1134,18 +1134,16 @@
     <div class="pillar">
       <p class="pillar-num">02 · AI Analysis</p>
       <h3 class="pillar-title">Doesn't miss a page.</h3>
-      <p>Our proprietary AI document analysis tool reads the full strata library — minutes, financials, expert reports, correspondence, invoices. It surfaces inconsistencies, finds patterns, and flags what's missing. Most strata reports stop at 3 years; we analyse every document available — whether that's 3 years of records or 10*.</p>
-      <p class="pillar-stat"><strong>Largest job to date</strong> &nbsp;·&nbsp; 10,039 documents &nbsp;·&nbsp; 9 years analysed</p>
-      <p class="pillar-stat"><strong>*</strong> &nbsp Dependent on Strata mangers available records.</p>
+      <p>Our proprietary AI document analysis tool reads the full strata library — minutes, financials, expert reports, correspondence, invoices. It surfaces inconsistencies, finds patterns, and flags what's missing. Most strata reports stop at 3 years; we analyse every document available — whether that's 5 years of records or 10.</p>
+      <p class="pillar-stat"><strong>Largest job to date</strong> &nbsp;·&nbsp; 8,700 documents + 1,400 invoices &nbsp;·&nbsp; 7 years analysed</p>
     </div>
     <div class="pillar">
       <p class="pillar-num">03 · Client-focused</p>
       <h3 class="pillar-title">Same-day verbal, detailed final.</h3>
-      <p>Straight after the inspection, Dominic calls with a verbal briefing — what he found, what matters most, what to do next. The final written report follows: photos, page references, and remediation advice, aligned with NCC and Australian Standards, encompassing your property.</p>
+      <p>Straight after the inspection, Dominic calls with a verbal briefing — what he found, what matters most, what to do next. The final written report follows: photos, page references, and remediation advice, shaped to your property.</p>
     </div>
   </div>
 
-  <p class="meth-closing">Each property is unique. So is each report.</p>
 
 </section>
 
